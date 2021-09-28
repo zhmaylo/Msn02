@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 app.use(express.json({ extended: true }))
 
-app.use('/api/hello', require('./routes/hello.routes'))
+app.use('/api/hello', require('./backend/routes/hello.routes'))
 
 
 if (process.env.NODE_ENV === 'production') {
@@ -22,7 +22,7 @@ const { Sequelize, Model, DataTypes } = require('sequelize');
 // var pg = require('pg');
 // pg.defaults.ssl = true;
 
-const sequelize = new Sequelize('postgres://pbudoavnztjvzr:2ec32aa5541e3b8eeccca965f7dfeb4c6acd38bf791e76adb4468c4ea9ad8767@ec2-34-255-134-200.eu-west-1.compute.amazonaws.com:5432/d3epo9svq2fnvd', {
+const sequelize = new Sequelize('postgres://skpmliqjohwdhj:9b80490a34186fb63dc5b3fa281399c60526f38461d2215a30e184df2c2673a1@ec2-18-209-143-227.compute-1.amazonaws.com:5432/drbjb5l1n9khe', {
   dialect: "postgres",
   dialectOptions: {
     ssl: {
