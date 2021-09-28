@@ -8,9 +8,9 @@
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "client": "npm run start --prefix client",
-    "server": "nodemon app.js",
+    "server": "nodemon ./backend/app.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
-    "start": "node app.js"
+    "start": "node ./backend/app.js"
   },
   "keywords": [
     "mysql",
