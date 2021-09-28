@@ -9,7 +9,7 @@ app.use(express.json({ extended: true }))
 app.use('/api/hello', require('./routes/hello.routes'))
 
 if (process.env.NODE_ENV === 'production') {
-  app.use('/', express.static(path.join(__dirname, './client/build')))
+  app.use('//', express.static(path.join(__dirname, './client/build')))
 }
 
 app.listen(port, () => console.log(`Server has been started ${port}...`))
