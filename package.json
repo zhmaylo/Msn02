@@ -10,7 +10,7 @@
     "client": "npm run start --prefix client",
     "server": "nodemon ./backend/app.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
-    "start": "node app.js"
+    "start": "node ./backend/app.js"
   },
   "keywords": [
     "mysql",
