@@ -19,7 +19,7 @@ export const Routes = () => {
                 <UserPage />
             </Route>
             {/* else */}
-            <Redirect to="/admin" />
+            <Redirect to="/main" />
         </Switch>
     )
 }
