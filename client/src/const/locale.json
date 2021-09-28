@@ -1,0 +1,31 @@
+{
+    "Main": {
+        "ru-RU": "Главная",
+        "en-EN": "Main"
+    },
+    "AdminPanel": {
+        "ru-RU": "Админ панель",
+        "en-EN": "Admin panel"
+    },
+    "MyPage": {
+        "ru-RU": "Моя страница",
+        "en-EN": "My page"
+    },
+    "Search": {
+        "ru-RU": "Поиск...",
+        "en-EN": "Search..."
+    },
+    "Login": {
+        "ru-RU": "Войдите: ",
+        "en-EN": "Log in: "
+    },
+    "1": {
+        "ru-RU": "",
+        "en-EN": ""
+    },
+    "2": {
+        "ru-RU": "",
+        "en-EN": ""
+    }
+}
+

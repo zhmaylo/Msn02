@@ -1,0 +1,10 @@
+
+.iconButton {
+
+    opacity: 0.5;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.iconButton:hover {
+    opacity: 1;
+}

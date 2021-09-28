@@ -1,0 +1,35 @@
+{
+  "name": "mysqlern",
+  "version": "1.0.0",
+  "description": " example",
+  "main": "app.js",
+  "scripts": {
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "client": "npm run start --prefix client",
+    "server": "nodemon ./backend/app.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "mysql",
+    "express",
+    "react",
+    "node",
+    "sequelize"
+  ],
+  "author": "zhmaylo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.3.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "nodemon": "^2.0.12"
+  }
+}
