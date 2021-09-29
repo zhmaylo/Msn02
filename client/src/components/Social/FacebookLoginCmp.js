@@ -12,6 +12,7 @@ const FacebookButton = ({ onClick, styles }) => (
         className='bi-facebook iconButton'
         href="/"
         onClick={onClick}
+        style={{fontSize: 30}}
     > </span>
 );
 

@@ -1,18 +1,44 @@
-.navbar1 {
-    height: 100;
-    justify-content: "left";
+
+
+.toggleLogout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
 }
+
+.login {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1em;
+}
+
+.search {
+  
+}
+
 
 /* xxl >= 1400 */
 
 @media screen and (min-width: 1400px) {}
+
 /* xl >= 1200 */
 
 @media screen and (min-width: 1200px) {}
 
 /* lg >= 991 */
 
-@media screen and (min-width: 992px) {}
+@media screen and (min-width: 992px) {
+    .toggleLogout {
+        margin-top: 0px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+    }
+
+}
 
 /* md >= 768 */
 
@@ -21,10 +47,24 @@
 /* sm >= 576 */
 
 @media screen and (min-width: 576px) {
-
+    .toggleLogout {
+        margin-top: 5px;
+    }
+    .search {
+        margin-right: 0em;
+    }
 }
+
 /* xs < 576 */
 
 @media screen and (max-width: 575px) {
-
+    .search {
+        margin-right: 0em;
+    }
+    .toggleLogout {
+        margin-top: 5px;
+    }
+    /* div.toggle {
+        margin-top: 5px;
+    } */
 }

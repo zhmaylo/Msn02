@@ -8,7 +8,7 @@ const GoogleButton = ({ renderProps }) => {
     return (< span
         className='bi-google iconButton'
         href="/"
-        onClick={() => { renderProps.onClick() }}
+        onClick={() => { renderProps.onClick() }} style={{fontSize: 30}}
     > </span>)
 };
 

@@ -10,8 +10,8 @@ export const Search = () => {
     const cont = useContext(Context)
     return (
 
-        // <InputGroup className="col sm=32 md-2 offset-1" style={{ marginRight: 15 }} >
-        <InputGroup className="offset-0" style={{ marginRight: 15 }} >
+        <InputGroup className="col" style={{ marginRight: 15 }} expand="col">
+        {/* // <InputGroup className="style={{ marginRight: 15 }} > */}
             <FormControl
                 placeholder={loc.Search[cont.lang]}
                 aria-label={loc.Search[cont.lang]}
