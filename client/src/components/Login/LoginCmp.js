@@ -10,11 +10,15 @@ export const LoginCmp = () => {
     const cont = useContext(Context)
     return (
         <>
-            <span className="title" >{loc.Login[cont.lang]} </span>
-            <div className="login" >
+            <span className="title login" >
+                {loc.Login[cont.lang]} 
+            {/* <div className="login" > */}
+            <>
                 <GoogleLoginCmp />
                 <FacebookLoginCmp />
-            </div>
+            </>
+            {/* </div> */}
+            </span>
         </>
     )
 }
