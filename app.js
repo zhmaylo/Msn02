@@ -10,10 +10,7 @@ app.use('/api/hello', require('./backend/routes/hello.routes'))
 
 
 if (process.env.NODE_ENV === 'production') {
-  // app.use('/', express.static(path.join(__dirname, '/client/build')))
-
   app.use('/', express.static(path.join(__dirname, 'client', 'build')))
-
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   })
@@ -61,7 +58,7 @@ sequelize.sync().then(function () {
     birthday: new Date(1980, 6, 20)
   });
 }).then(function (jane) {
-  console.log('jane.get=>',jane.get({
+  console.log('jane.get=>', jane.get({
     plain: true
   }));
 });
