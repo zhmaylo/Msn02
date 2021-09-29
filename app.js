@@ -25,7 +25,7 @@ const { Sequelize, Model, DataTypes } = require('sequelize');
 // var pg = require('pg');
 // pg.defaults.ssl = true;
 
-const sequelize = new Sequelize('postgres://skpmliqjohwdhj:9b80490a34186fb63dc5b3fa281399c60526f38461d2215a30e184df2c2673a1@ec2-18-209-143-227.compute-1.amazonaws.com:5432/drbjb5l1n9khe', {
+const sequelize = new Sequelize('postgres://pvazpcuiawfchy:316670cbdb136e8750e2028a2c21ec7a0a47b69b0c40ca531d263de978afcff9@ec2-34-233-187-36.compute-1.amazonaws.com:5432/d3r0um3ob7afh1', {
   dialect: "postgres",
   dialectOptions: {
     ssl: {
