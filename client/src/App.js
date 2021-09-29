@@ -24,10 +24,9 @@ function App() {
             <link id="theme-style" rel="stylesheet" ref={themeRef} />
           </header>
           <Navibar />
-          {Routes}
+          <Routes />
         </div>
       </Route>
-
     </Context.Provider>
   );
 }

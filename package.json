@@ -9,8 +9,9 @@
     "heroku-postbuild": "npm run install-client && npm run build",
     "client": "npm run start --prefix client",
     "server": "nodemon app.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
-    "start": "node app.js"
+    
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\"" ,
+    "start": "cross-env NODE_ENV=production node app.js" 
   },
   "keywords": [
     "mysql",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "concurrently": "^6.2.2",
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.13"
   }
 }
