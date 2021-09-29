@@ -11,7 +11,7 @@ export const Routes = () => {
             <Route path="/admin" exact>
                 <AdminPage />
             </Route>
-            <Route path="/main" exact>
+            <Route path="/main">
                 <MainPage />
             </Route>
             {/* id - dynamic parameter -  динамический параметр */}
