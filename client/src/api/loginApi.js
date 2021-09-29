@@ -13,7 +13,9 @@ export const useUserState = () => {
 
 export const login = (data) => {
     user.id = data.id || data.it.sT;
+    console.log("🚀 ~ file: loginApi.js ~ line 16 ~ user.id", user.id);
     user.name = data.name || data.it.Re;
+    console.log("🚀 ~ file: loginApi.js ~ line 18 ~ user.name", user.name);
     userToStore();
     return user;
 }
