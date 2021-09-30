@@ -18,15 +18,15 @@ function App() {
   return (
     <Context.Provider value={{ setThemeState, setLocaleState, lang, userInfo, setUserState }} >
 
-      {/* <Route> */}
+      <Route>
         <div className="App" >
           <header className="App-header">
             <link id="theme-style" rel="stylesheet" ref={themeRef} />
           </header>
           <Navibar />
-          {/* <Routes /> */}
+          <Routes />
         </div>
-      {/* </Route> */}
+      </Route>
     </Context.Provider>
   );
 }
