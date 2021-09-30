@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const userdata = require('../const/admin.const');
-const User = require('../models/user');
+const User = require('../models/User');
 
 
 
