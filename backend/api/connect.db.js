@@ -1,10 +1,7 @@
+const { Sequelize } = require('sequelize');
 
-const { Sequelize, Model, DataTypes } = require('sequelize');
-
-// var pg = require('pg');
-// pg.defaults.ssl = true;
-
-const sequelize = new Sequelize('postgres://pvazpcuiawfchy:316670cbdb136e8750e2028a2c21ec7a0a47b69b0c40ca531d263de978afcff9@ec2-34-233-187-36.compute-1.amazonaws.com:5432/d3r0um3ob7afh1', {
+let init = false;
+const sequelize = new Sequelize('postgres://vbbsrqygellzpe:07eccfdd58bc10f13835586cc351e18707bbf703b249d74bc014b7fdf4a6c9f7@ec2-54-228-139-34.eu-west-1.compute.amazonaws.com:5432/d7uks2s23lor92', {
   dialect: "postgres",
   dialectOptions: {
     ssl: {
@@ -14,16 +11,21 @@ const sequelize = new Sequelize('postgres://pvazpcuiawfchy:316670cbdb136e8750e20
   },
 })
 
-const connectDB = async () => {
-  try {
-    await sequelize.authenticate();
-    console.log('Connection has been established successfully.');
-    return sequelize;
-  } catch (error) {
-    console.error('Unable to connect to the database:', error);
-    return error;
+connectDB = async () => {
+  if (!init) {
+    try { await sequelizeAuth() }
+    catch (error) { console.error('Unable to connect to the database:', error); }
   }
+  return sequelize;
 }
 
+connectDB()
+
+sequelizeAuth = async () => {
+  await sequelize.authenticate();
+  console.log('Connection has been established successfully.');
+  init = true;
+}
 
 module.exports = connectDB;
+
