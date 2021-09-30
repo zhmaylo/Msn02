@@ -11,6 +11,12 @@ const sequelize = new Sequelize('postgres://vbbsrqygellzpe:07eccfdd58bc10f138355
   },
 })
 
+sequelizeAuth = async () => {
+  await sequelize.authenticate();
+  console.log('Connection has been established successfully.');
+  init = true;
+}
+
 connectDB = async () => {
   if (!init) {
     try { await sequelizeAuth() }
@@ -21,11 +27,6 @@ connectDB = async () => {
 
 connectDB()
 
-sequelizeAuth = async () => {
-  await sequelize.authenticate();
-  console.log('Connection has been established successfully.');
-  init = true;
-}
 
 module.exports = connectDB;
 
