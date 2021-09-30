@@ -22,4 +22,4 @@ app.listen(port, () => console.log(`Server has been started ${port}...`))
 
 //////////////////////////////////////
 
-// fillingDB(); 
+fillingDB(); 

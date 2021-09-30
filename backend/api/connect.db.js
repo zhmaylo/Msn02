@@ -25,8 +25,6 @@ connectDB = async () => {
   return sequelize;
 }
 
-connectDB()
-
 
 module.exports = connectDB;
 
