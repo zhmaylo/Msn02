@@ -6,7 +6,7 @@ export const useHttp = () => {
         try {
             const response = await getRequest(url, method, body, headers);
             const data = await response.json()
-            console.log('🚀 ~ file: httpApi2.js ~ line 15 ~ request ~ data', data);
+            console.log('🚀 ~ file: httpApi.js ~ line 15 ~ request ~ data', data);
             isResponseFail(response.ok, data);
             return data;
         }

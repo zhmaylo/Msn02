@@ -19,9 +19,9 @@
         "ru-RU": "Войдите: ",
         "en-EN": "Log in: "
     },
-    "1": {
-        "ru-RU": "",
-        "en-EN": ""
+    "Loading": {
+        "ru-RU": "Загрузка...",
+        "en-EN": "Loading..."
     },
     "2": {
         "ru-RU": "",
