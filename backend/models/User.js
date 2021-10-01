@@ -9,7 +9,7 @@ class User extends Model { }
     User.init({
         userid: DataTypes.STRING,
         username: DataTypes.STRING,
-        userpageurl: DataTypes.STRING
+        userpage: DataTypes.STRING
     }, { sequelize, modelName: 'user' });
     console.log("User.js - modele init")
 })()

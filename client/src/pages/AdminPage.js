@@ -7,8 +7,10 @@ export const AdminPage = () => {
     const [fet, setFet] = useState("hello");
     // let fet = "";
     const getLink = useCallback(async () => {
-        let fet = request('/api/hello', 'GET', null, {});
-         fet = request('/api/hello', 'POST', null, {});
+        let fet = await  request('/admin/userlist', 'GET', null, {});
+        console.log('🚀 ~ file: AdminPage.js ~ line 11 ~ getLink ~ fet', fet);
+         fet = await request('/api/hello', 'POST', null, {});
+         console.log('🚀 ~ file: AdminPage.js ~ line 13 ~ getLink ~ fet', fet);
         return fet;
     }, [request])
 
