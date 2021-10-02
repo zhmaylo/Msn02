@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { BrowserRouter as Route } from "react-router-dom"
 
 import { Navibar } from './components/Navibar/NavibarCmp'
@@ -16,7 +16,7 @@ function App() {
 
 
   return (
-    <Context.Provider value={{ setThemeState, setLocaleState, lang, userInfo, setUserState }} >
+    <Context.Provider value={{ setThemeState, setLocaleState, lang, userInfo, setUserState}} >
 
       <Route>
         <div className="App" >

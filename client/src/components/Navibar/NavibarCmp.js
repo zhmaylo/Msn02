@@ -12,12 +12,16 @@ import { ToggleTheme } from '../Theme/ToggleThemeCmp';
 import { LoginCmp } from '../Login/LoginCmp';
 import { LogoutCmp } from '../Login/LogoutCmp';
 
-
 const loc = require("../../const/locale.json");
-
 
 export const Navibar = () => {
     const cont = useContext(Context)
+
+    const GetLog = () => {
+        console.log("🚀 ~ file: NavibarCmp.js ~ line 22 ~ cont.userInfo.id", cont.userInfo.id);
+        if (cont.userInfo.id)  return ( <LogoutCmp />)
+        else return  (<LoginCmp />)
+    }
 
     return (
 
@@ -28,10 +32,16 @@ export const Navibar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/main">{loc.Main[cont.lang]}</Nav.Link>
-                        <Nav.Link href="/userpage/1">{loc.MyPage[cont.lang]}</Nav.Link>
-                        {cont.userInfo && <Nav.Link href="/admin">{loc.AdminPanel[cont.lang]}</Nav.Link>}
+                        {!!cont.userInfo &&
+                            <Nav.Link href={`/mypage/${cont.userInfo.id}`}>
+                                {loc.MyPage[cont.lang]}
+                            </Nav.Link>}
+                        {!!cont.userInfo &&
+                            <Nav.Link href="/admin">
+                                {loc.AdminPanel[cont.lang]}
+                            </Nav.Link>}
                     </Nav>
-                    <div className="search col-lg-3 col-xl-4 col-xxl-5" >
+                    <div className="search col-lg-2 col-xl-4 col-xxl-5" >
                         <Search />
                     </div>
                     <div className="toggleLogout" >
@@ -40,12 +50,12 @@ export const Navibar = () => {
                             <ToggleLocale onChange={(localeFlag) => { cont.setLocaleState(localeFlag) }} />
                         </div>
                         <div className="login" >
-                            {cont.userInfo ? <LogoutCmp onChange={() => { cont.setUserState() }} /> : <LoginCmp />}
+                            {/* {!cont.userInfo ? <LogoutCmp onChange={() => { cont.setUserState() }} /> : <LoginCmp />} */}
+                            <GetLog/>
                         </div>
                     </div>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-
     )
 }

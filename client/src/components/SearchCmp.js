@@ -10,7 +10,7 @@ export const Search = () => {
     const cont = useContext(Context)
     return (
 
-        <InputGroup className="col" style={{ marginRight: 15 }} expand="col">
+        <InputGroup style={{ marginRight: 15 }}>
         {/* // <InputGroup className="style={{ marginRight: 15 }} > */}
             <FormControl
                 placeholder={loc.Search[cont.lang]}

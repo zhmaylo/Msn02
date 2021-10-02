@@ -22,7 +22,7 @@ export const UserTable = ({ userList }) => {
                         <tr key={item.id}>
                             <td>{item.userid}</td>
                             <td>
-                                <Link to={`/userpage/${item.id}`}>{item.username}</Link>
+                                <Link to={`/userpage/${item.userid}`}>{item.username}</Link>
                             </td>
                         </tr>
                     )
