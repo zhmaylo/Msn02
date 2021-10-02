@@ -7,9 +7,11 @@ class User extends Model { }
 (async () => {
     const sequelize = await connectDB();
     User.init({
-        userid: DataTypes.STRING,
+        userid: {
+            type: DataTypes.STRING,
+            unique: true,
+        },
         username: DataTypes.STRING,
-        userpage: DataTypes.STRING
     }, { sequelize, modelName: 'user' });
     console.log("User.js - modele init")
 })()

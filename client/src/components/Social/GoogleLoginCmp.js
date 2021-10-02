@@ -1,8 +1,9 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
+import { login } from "../../api/loginApi";
 import { GoogleID } from '../../const/socialConst';
 import "./GoogleFaceLoginCmp.css"
-import { login } from "../../api/loginApi";
+
 
 const GoogleButton = ({ renderProps }) => {
     return (< span

@@ -1,17 +1,19 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom'
+import { Context } from './../../context/Context';
+import { useContext } from 'react';
+const loc = require("../../const/locale.json");
 
 export const UserTable = ({ userList }) => {
-    console.log("🚀 ~ file: TableCmp.js ~ line 5 ~ userList", userList);
-
+    const cont = useContext(Context)
+   
     return (
         <Table>
             <thead>
                 <tr>
-                    <th>User ID</th>
-                    <th>User Name</th>
-                    <th>User page</th>
+                    <th>{loc.UserID[cont.lang]}</th>
+                    <th>{loc.UserName[cont.lang]}</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,9 +21,8 @@ export const UserTable = ({ userList }) => {
                     return (
                         <tr key={item.id}>
                             <td>{item.userid}</td>
-                            <td>{item.username}</td>
                             <td>
-                                <Link to={item.userpage}>Открыть</Link>
+                                <Link to={`/userpage/${item.id}`}>{item.username}</Link>
                             </td>
                         </tr>
                     )

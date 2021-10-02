@@ -9,8 +9,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 app.use(express.json({ extended: true }))
 
-app.use('/api/hello', require('./backend/routes/hello.routes'))
 app.use('/admin', require('./backend/routes/admin.routes'))
+app.use('/login', require('./backend/routes/login.routes'))
 
 
 if (process.env.NODE_ENV === 'production') {

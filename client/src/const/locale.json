@@ -23,7 +23,19 @@
         "ru-RU": "Загрузка...",
         "en-EN": "Loading..."
     },
+    "UserID": {
+        "ru-RU": "ID",
+        "en-EN": "User ID"
+    },
+    "UserName": {
+        "ru-RU": "Имя пользователя",
+        "en-EN": "User name"
+    },
     "2": {
+        "ru-RU": "",
+        "en-EN": ""
+    },
+    "3": {
         "ru-RU": "",
         "en-EN": ""
     }

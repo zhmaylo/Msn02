@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 
 import { Context } from '../../context/Context';
+import { Fa1cebookLoginCmp } from "../Social/FacebookLoginCmp";
 import { GoogleLoginCmp } from '../Social/GoogleLoginCmp';
-import { FacebookLoginCmp } from '../Social/FacebookLoginCmp';
+
 import "./LoginCmp.css"
 
 const loc = require("../../const/locale.json");
@@ -13,7 +14,7 @@ export const LoginCmp = () => {
             <span className="title" >{loc.Login[cont.lang]} </span>
             <div className="login" >
                 <GoogleLoginCmp />
-                <FacebookLoginCmp />
+                <Fa1cebookLoginCmp />
             </div>
         </>
     )
