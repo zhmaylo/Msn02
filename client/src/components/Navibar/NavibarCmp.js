@@ -18,8 +18,8 @@ export const Navibar = () => {
     const cont = useContext(Context)
 
     const GetLog = () => {
-        console.log("🚀 ~ file: NavibarCmp.js ~ line 22 ~ cont.userInfo.id", cont.userInfo.id);
-        if (cont.userInfo.id)  return ( <LogoutCmp />)
+        console.log("🚀 ~ file: NavibarCmp.js ~ line 22 ~ cont.userData.id", cont.userData.id);
+        if (cont.userData.id)  return ( <LogoutCmp />)
         else return  (<LoginCmp />)
     }
 
@@ -32,11 +32,11 @@ export const Navibar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/main">{loc.Main[cont.lang]}</Nav.Link>
-                        {!!cont.userInfo &&
-                            <Nav.Link href={`/mypage/${cont.userInfo.id}`}>
+                        {!!cont.userData &&
+                            <Nav.Link href={`/mypage/${cont.userData.id}`}>
                                 {loc.MyPage[cont.lang]}
                             </Nav.Link>}
-                        {!!cont.userInfo &&
+                        {!!cont.userData &&
                             <Nav.Link href="/admin">
                                 {loc.AdminPanel[cont.lang]}
                             </Nav.Link>}
@@ -50,7 +50,7 @@ export const Navibar = () => {
                             <ToggleLocale onChange={(localeFlag) => { cont.setLocaleState(localeFlag) }} />
                         </div>
                         <div className="login" >
-                            {/* {!cont.userInfo ? <LogoutCmp onChange={() => { cont.setUserState() }} /> : <LoginCmp />} */}
+                            {/* {!cont.userData ? <LogoutCmp onChange={() => { cont.setUserState() }} /> : <LoginCmp />} */}
                             <GetLog/>
                         </div>
                     </div>

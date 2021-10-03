@@ -5,18 +5,18 @@ import { Navibar } from './components/Navibar/NavibarCmp'
 import { Context } from './context/Context'
 import { useTheme } from './api/themeApi';
 import { useLocale } from './api/localeApi';
-import { useUserState } from "./api/loginApi";
 import { Routes } from "./routes";
+import { useUserState } from "./api/userStateApi";
 
 function App() {
 
   const { themeRef, setThemeState } = useTheme();
   const { lang, setLocaleState } = useLocale();
-  const { userInfo, setUserState } = useUserState();
+  const {userData, sendUserDataToState } = useUserState();
 
 
   return (
-    <Context.Provider value={{ setThemeState, setLocaleState, lang, userInfo, setUserState}} >
+    <Context.Provider value={{ setThemeState, setLocaleState, lang, userData, sendUserDataToState}} >
 
       <Route>
         <div className="App" >

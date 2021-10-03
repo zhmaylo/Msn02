@@ -17,14 +17,14 @@ export const Routes = () => {
             </Route>
             {/* exact  - exact route match - точное совпадние маршрута*/}
             <Route path="/admin" exact>
-                {cont.userInfo ? <AdminPage /> : <MainPage />}
+                {cont.userData ? <AdminPage /> : <MainPage />}
             </Route>
             {/* id - dynamic parameter -  динамический параметр */}
             <Route path="/mypage">
-                {cont.userInfo ? <MyPage /> : <MainPage />}
+                {cont.userData ? <MyPage /> : <MainPage />}
             </Route>
             <Route path="/userpage/:id">
-                {cont.userInfo ? <UserPage /> : <MainPage />}
+                {cont.userData ? <UserPage /> : <MainPage />}
             </Route>
             {/* else */}
             <Redirect to="/main" />

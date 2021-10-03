@@ -7,30 +7,28 @@ import { request } from "./requestApi";
 // let userToState;
 
 // export const useUserState = () => {
-//     const [userInfo, setUserState] = useState(user);
-    // userToState = setUserState;
-    // return { userInfo, setUserState };
+//     const [userData, setUserState] = useState(user);
+// userToState = setUserState;
+// return { userData, setUserState };
 // }
 
 
-export const login = (data) => {
+export const sendUserDataToStorage = (data) => {
     console.log("🚀 ~ file: loginApi.js ~ line 17 ~ data", data);
     const user = getUserIDName(data);
-    sendUserDataToServer(userToStore(user));
+    userToStore(user);
     console.log("🚀 ~ file: loginApi.js ~ line 20 ~ user", user);
     return user;
 }
 
-export const logout = () => {
-    user.id = user.name = null;
-    userToStore();
-    return user;
+export const removeUserDataFromStore = () => {
+    userToStore({ id: null, name: null });
 }
 
 const getUserIDName = (data) => {
     const id = data.id || data.it.sT;
     const name = data.name || data.it.Re;;
-    return {id: id, name: name}
+    return { id: id, name: name }
 }
 
 const userToStore = (user) => {
@@ -40,7 +38,8 @@ const userToStore = (user) => {
     return;
 }
 
-export const sendUserDataToServer = async (user) => {
+export const sendUserDataToServer = async (data) => {
     // console.log("🚀 ~ file: loginApi.js ~ line 39 ~ user", user);
+    let user = getUserIDName(data)
     await request('/login', 'POST', { user }, {});
 }
