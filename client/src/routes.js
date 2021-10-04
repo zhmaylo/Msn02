@@ -9,25 +9,25 @@ import { Context } from './context/Context';
 
 export const Routes = () => {
     const cont = useContext(Context)
+
+    const AuthPage = () => {
+        if (cont.userData.isAuth)
+            return (
+                <>
+                    <Route path="/admin" exact> <AdminPage /> </Route>
+                    <Route path="/mypage" exact> <MyPage /> </Route>
+                    <Route path="/userpage/:id"> <UserPage /> </Route>
+                </>
+            )
+        return (<Redirect to="/main" />)
+    }
     
     return (
         <Switch>
-            <Route path="/main">
+            <Route path="/main" exact>
                 <MainPage />
             </Route>
-            {/* exact  - exact route match - точное совпадние маршрута*/}
-            <Route path="/admin" exact>
-                {cont.userData ? <AdminPage /> : <MainPage />}
-            </Route>
-            {/* id - dynamic parameter -  динамический параметр */}
-            <Route path="/mypage">
-                {cont.userData ? <MyPage /> : <MainPage />}
-            </Route>
-            <Route path="/userpage/:id">
-                {cont.userData ? <UserPage /> : <MainPage />}
-            </Route>
-            {/* else */}
-            <Redirect to="/main" />
+            <AuthPage />
         </Switch>
     )
 }
