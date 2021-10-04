@@ -18,7 +18,7 @@ export const AdminPage = () => {
 
     if (!isLoading) return (<Loading />)
     return (
-        <Container className="col-sm-8 col-md-7 col-lg-5 col-xl-5 col-xxl-4">
+        <Container className="col-sm-10 col-md-9 col-lg-7 col-xl-7 col-xxl-5">
             <UserTable userList={userList} />
         </Container>
     )

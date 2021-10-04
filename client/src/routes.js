@@ -21,7 +21,7 @@ export const Routes = () => {
             )
         return (<Redirect to="/main" />)
     }
-    
+
     return (
         <Switch>
             <Route path="/main" exact>

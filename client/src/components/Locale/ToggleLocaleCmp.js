@@ -14,13 +14,13 @@ export const ToggleLocale = ({ onChange }) => {
     }
 
     const ButtonLocale = () => {
-        return (<>
-            <Button variant={"outline-secondary"} style={{marginLeft : 5 }}
+        return (<div className='togle'>
+            <Button variant={"outline-secondary"}
                 onClick={() => changeLocale()}
             >
                 <span> {localeState ? "RU" : "EN"} </span>
             </Button>
-        </>)
+        </div>)
     }
 
     return <ButtonLocale />

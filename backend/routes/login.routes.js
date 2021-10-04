@@ -1,6 +1,6 @@
 
 const express = require('express');
-const userCreate = require('../api/user.db');
+const userCreate = require('../api/userDbApi');
 const router = express.Router();
 
 
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 router.post('/', (req, res) => {
 
     console.log("🚀 ~ file: auth.routes.js ~ line 12 ~ req", req.body);
-    const user = {"userid" : req.body.user.id, "username" : req.body.user.name};
+    const user = {"uid" : req.body.user.id, "name" : req.body.user.name};
     console.log("🚀 ~ file: login.routes.js ~ line 18 ~ user", user);
     userCreate(user);
 

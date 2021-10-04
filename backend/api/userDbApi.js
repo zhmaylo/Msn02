@@ -1,11 +1,11 @@
 const User = require('../models/User');
 
 const userCreate = async (item) => {
-    console.log("🚀 ~ file: user.db.js ~ line 4 ~ item", item);
+    console.log("🚀 ~ file: user.db.api.js ~ line 4 ~ item", item);
     try {
         await User.create({
-            userid: item.userid,
-            username: item.username,
+            uid: item.uid,
+            name: item.name,
         })
         return;
     } catch (error) { }

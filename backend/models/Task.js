@@ -2,9 +2,8 @@ const { Model, DataTypes } = require('sequelize');
 
 export class Task extends Model { }
 Task.init({
-    userid: DataTypes.STRING,
-    taskid: DataTypes.STRING,
-    taskname: DataTypes.STRING,
+    id: DataTypes.STRING,
+    name: DataTypes.STRING,
     condition: DataTypes.STRING
     
 }, { sequelize, modelName: 'user' });

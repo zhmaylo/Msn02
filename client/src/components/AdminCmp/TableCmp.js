@@ -20,9 +20,9 @@ export const UserTable = ({ userList }) => {
                 {userList.map((item, index) => {
                     return (
                         <tr key={item.id}>
-                            <td>{item.userid}</td>
+                            <td>{item.uid}</td>
                             <td>
-                                <Link to={`/userpage/${item.userid}`}>{item.username}</Link>
+                                <Link to={`/userpage/${item.uid}`}>{item.name}</Link>
                             </td>
                         </tr>
                     )

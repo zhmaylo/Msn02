@@ -1,7 +1,7 @@
 
 const express = require('express');
 const path = require('path');
-const fillingDB = require('./backend/fakedata/filling.db');
+const fakeDB = require('./backend/fakedata/fake');
 
 
 const app = express();
@@ -24,4 +24,4 @@ app.listen(port, () => console.log(`Server has been started ${port}...`))
 
 //////////////////////////////////////
 
-fillingDB(); 
+fakeDB(); 

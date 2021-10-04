@@ -26,8 +26,9 @@ export const Navibar = () => {
     const NavLink = () => {
         return (
             <>
-                <Nav.Link href={`/mypage/${cont.userData.id}`}> {loc.MyPage[cont.lang]} </Nav.Link>
-                <Nav.Link href="/admin"> {loc.AdminPanel[cont.lang]}</Nav.Link>
+                <Nav.Link href={`/mypage`}> {loc.MyPage[cont.lang]} </Nav.Link>
+                { (cont.userData.id === "109751285978140171006") && (
+                <Nav.Link href="/admin"> {loc.AdminPanel[cont.lang]}</Nav.Link> )}
             </>
         )
     }
