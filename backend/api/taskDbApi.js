@@ -1,8 +1,6 @@
+const Task = require('../models/Task');
 
-const { Task } = require('../models/Task');
-const User = require('../models/User');
-
-const userCreate = async (item) => {
+const taskCreate = async (item) => {
     console.log("🚀 ~ file: user.db.api.js ~ line 4 ~ item", item);
     try {
         await User.create({
@@ -12,6 +10,5 @@ const userCreate = async (item) => {
         return;
     } catch (error) { }
 }
-
 
 module.exports = userCreate;

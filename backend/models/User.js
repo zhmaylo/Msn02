@@ -13,6 +13,7 @@ class User extends Model { }
         },
         name: DataTypes.STRING,
     }, { sequelize, modelName: 'user' });
+    User.hasMany(Task);
     console.log("User.js - modele init")
 })()
 
