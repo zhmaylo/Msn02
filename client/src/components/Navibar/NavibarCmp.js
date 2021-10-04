@@ -31,8 +31,6 @@ export const Navibar = () => {
             </>
         )
     }
-
-
     return (
 
         <Navbar className="navbar" bg="light" expand="lg" >
@@ -42,7 +40,7 @@ export const Navibar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/main">{loc.Main[cont.lang]}</Nav.Link>
-                        { (cont.userData.isAuth) && (<NavLink/>)}
+                        {(cont.userData.isAuth) && (<NavLink />)}
                     </Nav>
                     <div className="search col-lg-2 col-xl-4 col-xxl-5" >
                         <Search />
