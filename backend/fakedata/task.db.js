@@ -41,35 +41,7 @@ const taskdata = [
         "answer": "50 тысяч, пятьдесят тывсяч",
         "rating": "4",
         "tags" : "необычныйавтосалон,автосалон,машина,доход,директор"
-    },
-    {
-        "name": "",
-        "condition": "",
-        "answer": "",
-        "rating": "",
-        "tags" : ""
-    },
-    {
-        "name": "",
-        "condition": "",
-        "answer": "",
-        "rating": "",
-        "tags" : ""
-    },
-    {
-        "name": "",
-        "condition": "",
-        "answer": "",
-        "rating": "",
-        "tags" : ""
-    },
-    {
-        "name": "",
-        "condition": "",
-        "answer": "",
-        "rating": "",
-        "tags" : ""
-    },
+    }
 ]
     
 module.exports = taskdata
