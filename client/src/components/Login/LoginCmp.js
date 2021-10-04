@@ -9,6 +9,7 @@ import "./LoginCmp.css"
 const loc = require("../../const/locale.json");
 export const LoginCmp = () => {
     const cont = useContext(Context)
+    
     return (
         <>
             <span className="title" >{loc.Login[cont.lang]} </span>

@@ -2,12 +2,11 @@ import React, { useContext } from "react";
 import FacebookAuth from 'react-facebook-auth';
 import { FaceBookID } from '../../const/socialConst';
 import "./GoogleFaceLoginCmp.css"
-import { sendUserDataToServer, sendUserDataToStorage } from '../../api/loginApi';
-
 import { Context } from '../../context/Context'
+import { sendUserDataToStorage } from "../../api/login/userStoreApi";
+import { sendUserDataToServer } from "../../api/login/userServerApi";
 
 const FacebookButton = ({ onClick }) => {
-    console.log("🚀 ~ file: FacebookLoginCmp.js ~ line 10 ~ onClick");
     return (
         < span
             className='bi-facebook iconButton'
@@ -18,18 +17,21 @@ const FacebookButton = ({ onClick }) => {
     )
 };
 
+
+
 export const Fa1cebookLoginCmp = () => {
     const cont = useContext(Context)
+
+    const facebookOk = (data) => {
+        sendUserDataToStorage(data);
+        sendUserDataToServer(data);
+        cont.sendUserDataToState(data);
+    }
 
     return (
         <FacebookAuth
             appId={FaceBookID}
-            callback={(data) => {
-                console.log("🚀 ~ file: FacebookLoginCmp.js ~ line 27 ~ data", data)
-                sendUserDataToStorage(data);
-                sendUserDataToServer(data);
-                cont.sendUserDataToState(data);
-            }}
+            callback={(data) => { facebookOk(data) }}
             component={FacebookButton}
             onFailure={(err) => { console.log("Login filed", err) }}
         />

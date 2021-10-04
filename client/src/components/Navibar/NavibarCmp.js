@@ -17,11 +17,21 @@ const loc = require("../../const/locale.json");
 export const Navibar = () => {
     const cont = useContext(Context)
 
-    const GetLog = () => {
-        console.log("🚀 ~ file: NavibarCmp.js ~ line 22 ~ cont.userData.id", cont.userData.id);
-        if (cont.userData.id)  return ( <LogoutCmp />)
-        else return  (<LoginCmp />)
+    const LogOutIn = () => {
+        if (cont.userData.isAuth) {
+            return (<LogoutCmp />)
+        } return (<LoginCmp />)
     }
+
+    const NavLink = () => {
+        return (
+            <>
+                <Nav.Link href={`/mypage/${cont.userData.id}`}> {loc.MyPage[cont.lang]} </Nav.Link>
+                <Nav.Link href="/admin"> {loc.AdminPanel[cont.lang]}</Nav.Link>
+            </>
+        )
+    }
+
 
     return (
 
@@ -32,14 +42,7 @@ export const Navibar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/main">{loc.Main[cont.lang]}</Nav.Link>
-                        {!!cont.userData &&
-                            <Nav.Link href={`/mypage/${cont.userData.id}`}>
-                                {loc.MyPage[cont.lang]}
-                            </Nav.Link>}
-                        {!!cont.userData &&
-                            <Nav.Link href="/admin">
-                                {loc.AdminPanel[cont.lang]}
-                            </Nav.Link>}
+                        { (cont.userData.isAuth) && (<NavLink/>)}
                     </Nav>
                     <div className="search col-lg-2 col-xl-4 col-xxl-5" >
                         <Search />
@@ -50,8 +53,7 @@ export const Navibar = () => {
                             <ToggleLocale onChange={(localeFlag) => { cont.setLocaleState(localeFlag) }} />
                         </div>
                         <div className="login" >
-                            {/* {!cont.userData ? <LogoutCmp onChange={() => { cont.setUserState() }} /> : <LoginCmp />} */}
-                            <GetLog/>
+                            <LogOutIn />
                         </div>
                     </div>
                 </Navbar.Collapse>

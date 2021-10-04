@@ -1,12 +1,12 @@
-import React, { useCallback, useContext } from "react";
+import React, { useContext } from "react";
 import "./LogoutCmp.css"
-
 import Button from 'react-bootstrap/Button';
-import { removeUserDataFromStore } from './../../api/loginApi';
 import { Context } from '../../context/Context';
+import { removeUserDataFromStore } from "../../api/login/userStoreApi";
 
 export const LogoutCmp = ({ onChange }) => {
     const cont = useContext(Context)
+    console.log('🚀 ~ file: LogoutCmp.js ~ line 14 ~ LogoutCmp ~ cont.userData.name', cont.userData.name);
 
     return (
         <div>

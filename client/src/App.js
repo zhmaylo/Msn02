@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { BrowserRouter as Route } from "react-router-dom"
 
 import { Navibar } from './components/Navibar/NavibarCmp'
@@ -6,17 +6,18 @@ import { Context } from './context/Context'
 import { useTheme } from './api/themeApi';
 import { useLocale } from './api/localeApi';
 import { Routes } from "./routes";
-import { useUserState } from "./api/userStateApi";
+import { useUserState } from "./api/login/userStateApi";
 
 function App() {
 
   const { themeRef, setThemeState } = useTheme();
   const { lang, setLocaleState } = useLocale();
-  const {userData, sendUserDataToState } = useUserState();
+  const { userData, sendUserDataToState } = useUserState();
+  console.log('🚀 ~ file: App.js ~ line 16 ~ App ~ userData', userData);
 
 
   return (
-    <Context.Provider value={{ setThemeState, setLocaleState, lang, userData, sendUserDataToState}} >
+    <Context.Provider value={{ setThemeState, setLocaleState, lang, userData, sendUserDataToState }} >
 
       <Route>
         <div className="App" >
