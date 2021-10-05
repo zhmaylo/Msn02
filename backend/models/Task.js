@@ -1,17 +1,17 @@
-// const { DataTypes, Model } = require('sequelize');
-// const sequelize = require('../api/sequelize.db');
+const { DataTypes, Model } = require('sequelize');
+const sequelize = require('../api/sequelize.db');
 
 
 
-// const Task = sequelize.define("Task", {
-//     name: DataTypes.STRING,
-//     condition: DataTypes.STRING,
-//     answer: DataTypes.STRING,
-//     rating: DataTypes.STRING,
-//     task: DataTypes.STRING,
-// })
+const Task = sequelize.define("Task", {
+    name: DataTypes.STRING,
+    condition: DataTypes.STRING,
+    answer: DataTypes.STRING,
+    rating: DataTypes.STRING,
+    task: DataTypes.STRING,
+})
 
-// module.exports = Task;
+module.exports = Task;
 
 
 // const { Model, DataTypes } = require('sequelize');
