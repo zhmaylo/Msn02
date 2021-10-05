@@ -1,22 +1,27 @@
-const userCreate = require('../api/userDbApi');
-const userdata = require('./user.db');
-const taskdata = require('./task.db');
-const connectDB = require('../api/connect.db');
-const User = require('../models/User');
+
+const getCountRowOfUser = require('./fakeUser')
+const taskdataToDB = require('./fakeTask')
+const userdateToDB = require ('./fakeUser')
+const getTaskOfUser = require ('./fakeTask')
 
 const fakeDB = async () => {
-    const sequelize = await connectDB();
-    const count = await getCountRow();
+    const count = await getCountRowOfUser();
     console.log("🚀 User table size ->", count, " ");
-
-    // await removeAndAdd();    
-    if (count > 1) return false;
-
-    await sequelize.sync({ force: true });
-    await userdateToDB();
-    count = await getCountRow();
-    console.log("🚀 UPDATE User table size ->", count, " ");
-    await taskdataToDB();
+    // if (count > 1) 
+    // { 
+        await overfillingDB() 
+    // };
 }
 
-module.exports=fakeDB;
+const overfillingDB = async () => {
+    // await removeAndAdd();    
+    
+    console.log("🚀 ~ file: fake.js ~ line 19 ~ overfillingDB ~ overfillingDB")
+    await userdateToDB();
+    console.log("🚀 ~ file: fake.js ~ line 21 ~ overfillingDB ~ userdateToDB")
+
+    // await taskdataToDB();
+    // await getTaskOfUser();
+}
+
+module.exports = fakeDB;

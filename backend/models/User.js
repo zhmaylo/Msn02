@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const connectDB = require('../api/connect.db');
+const Task = require('./Task');
 
 
 class User extends Model { }

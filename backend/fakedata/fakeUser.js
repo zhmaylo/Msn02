@@ -1,11 +1,11 @@
 const userCreate = require('../api/userDbApi');
 const userdata = require('./user.db');
-const taskdata = require('./task.db');
 const connectDB = require('../api/connect.db');
 const User = require('../models/User');
 
 
 const userdateToDB = async () => {
+    console.log("🚀 ~ file: fakeUser.js ~ line 15 ~ userdateToDB ~ userdateToDB")
     userdata.forEach(async (item) => {
         console.log('🚀 ~ file: fake.js ~ line 21 ~ userdata.forEach ~ item', item);
         await userCreate(item);
@@ -36,7 +36,8 @@ const removeAndAdd = async () => {
 // console.log('🚀 ~ file: app.js ~ line 69 ~ user', user.get({ plain: true }));
 //         console.log('🚀 ~ file: app.js ~ line 75 ~ user', user.toJSON());
 
-const getCountRow = async () => {
+const getCountRowOfUser = async () => {
+    console.log("🚀 ~ file: fakeUser.js ~ line 47 ~ getCountRowOfUser ~ getCountRowOfUser")
     const sequelize = await connectDB();
 
     const count = await User.findAll({
@@ -47,4 +48,4 @@ const getCountRow = async () => {
 }
 
 module.exports = userdateToDB;
-module.exports = getCountRow;
+module.exports = getCountRowOfUser;
