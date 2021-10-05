@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 let init = false;
-const sequelize = new Sequelize('postgres://vbbsrqygellzpe:07eccfdd58bc10f13835586cc351e18707bbf703b249d74bc014b7fdf4a6c9f7@ec2-54-228-139-34.eu-west-1.compute.amazonaws.com:5432/d7uks2s23lor92', {
+const sequelize = new Sequelize('postgres://euvnonuaunudgz:f2fa4dd7c2291ab60affc7a8b098d2ec608300dc9b3016e286fa4f76ca9251b4@ec2-52-209-171-51.eu-west-1.compute.amazonaws.com:5432/da62mvrd7s8cpl', {
   dialect: "postgres",
   dialectOptions: {
     ssl: {
@@ -25,6 +25,9 @@ connectDB = async () => {
   return sequelize;
 }
 
+connectDB();
+
 
 module.exports = connectDB;
+// module.exports = sequelize;
 
