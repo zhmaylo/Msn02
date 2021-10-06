@@ -12,7 +12,7 @@ const Task = sequelize.define("task", {
 })
     ; (async () => {
         // await sequelize.sync({ force: true })
-        // await sequelize.sync()
+        await sequelize.sync()
     })()
 
 module.exports = Task;

@@ -1,33 +1,28 @@
 
-const { userdateToDB } = require('./fakeUser')
-const { getCountRecordOfUser } = require('../api/userDbApi')
-const { taskdataToDB, getTaskOfUser } = require('./fakeTask')
-const { getCountRecordOfTask } = require('../api/taskDbApi')
+const { userdateToDB } = require('./fakeUserApi')
+const { taskdataToDB } = require('./fakeTaskApi')
+const User = require('../models/User');
+const Task = require('../models/Task');
+const { getSizeModel } = require('../api/commonDbApi');
 
+
+const sizeModelPrintToConsole = async () => {
+    console.log("🚀 Size 'User'=", await getSizeModel(User))
+    console.log("🚀 Size 'Task'=", await getSizeModel(Task))
+}
 
 const fakeDB = async () => {
-    let countUser = await getCountRecordOfUser();
-    let countTask = await getCountRecordOfTask();
-
-    // if ((countUser <= 1) | (countTask <= 1)) 
+    sizeModelPrintToConsole();
     {
         await overfillingDB();
-        countUser = await getCountRecordOfUser();
-        countTask = await getCountRecordOfTask();
+        sizeModelPrintToConsole();
     };
-    console.log("🚀 User table size ->", countUser, " ");
-    console.log("🚀 Task table size ->", countTask, " ");
 }
 
 const overfillingDB = async () => {
-    // await removeAndAdd();    
-
     await userdateToDB();
-
     await taskdataToDB();
-    await getTaskOfUser();
 }
-
 
 
 module.exports = fakeDB;
