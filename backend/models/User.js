@@ -1,7 +1,8 @@
-const { Model, DataTypes, Sequelize } = require('sequelize');
-const connectDB = require('../api/sequelize.db');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../api/sequelize.db');
 const Task = require('./Task');
 
+<<<<<<< HEAD
 class User extends Model { }
 
 (async () => {
@@ -32,19 +33,20 @@ class User extends Model { }
 
 // User.hasMany(Task);
 
+=======
+>>>>>>> e045923f57ef0632c83b82873472e9b1057d3253
 
+const User = sequelize.define('user', {
+    uid: {
+        type: DataTypes.STRING,
+        unique: true,
+    },
+    name: DataTypes.STRING,
+})
 // ;(async () => {
-    //     await sequelize.sync({ force: true })
-    // })()
-
-    // class User extends Model { }
-
-// const User = sequelize.define('user', {
-//     uid: {
-//         type: Sequelize.STRING,
-//         unique: true,
-//     },
-//     name: DataTypes.STRING,
-// })
+//     await sequelize.sync({ force: true })
+// })()
+// User.drop()
+User.hasMany(Task);
 
 module.exports = User
