@@ -11,6 +11,7 @@ const sequelize = new Sequelize('postgres://euvnonuaunudgz:f2fa4dd7c2291ab60affc
       rejectUnauthorized: false // This line will fix new error
     }
   },
+  logging: true,
 })
 
 // sequelizeAuth = async () => {

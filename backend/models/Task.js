@@ -1,34 +1,19 @@
-const { DataTypes, Model } = require('sequelize');
+const { DataTypes } = require('sequelize');
 const sequelize = require('../api/sequelize.db');
 
 
 
-const Task = sequelize.define("Task", {
+const Task = sequelize.define("task", {
     name: DataTypes.STRING,
-    condition: DataTypes.STRING,
+    condition: DataTypes.TEXT,
     answer: DataTypes.STRING,
     rating: DataTypes.STRING,
     task: DataTypes.STRING,
 })
+    ; (async () => {
+        // await sequelize.sync({ force: true })
+        // await sequelize.sync()
+    })()
 
 module.exports = Task;
 
-
-// const { Model, DataTypes } = require('sequelize');
-// const connectDB = require('../api/connect.db');
-
-
-// class Task extends Model { }
-
-// (async () => {
-//     const sequelize = await connectDB();
-//  Task.init({
-//     name: DataTypes.STRING,
-//     condition: DataTypes.STRING,
-//     answer: DataTypes.STRING,
-//     rating: DataTypes.STRING,
-//     task: DataTypes.STRING,
-// }, { sequelize, modelName: 'task' });
-// })()
-
-// module.exports = Task;

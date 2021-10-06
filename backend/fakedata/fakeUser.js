@@ -1,8 +1,5 @@
-const userCreate = require('../api/userDbApi');
+const {userCreate} = require('../api/userDbApi');
 const userdata = require('./user.db');
-const User = require('../models/User');
-const sequelize = require('../api/sequelize.db');
-
 
 const userdateToDB = async () => {
     userdata.forEach(async (item) => {
@@ -11,17 +8,9 @@ const userdateToDB = async () => {
     return;
 }
 
-const getCountRowOfUser = async () => {
-    const count = await User.findAll({
-        attributes: [[sequelize.fn("COUNT", sequelize.col("uid")), "countuid"]],
-        raw: true
-    })
-    return count[0].countuid;
-}
 
 module.exports = {
-    userdateToDB,
-    getCountRowOfUser
+    userdateToDB
 }
 
 
