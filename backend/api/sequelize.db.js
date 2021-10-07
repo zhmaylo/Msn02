@@ -10,7 +10,7 @@ const sequelize = new Sequelize(postgresURI, {
       rejectUnauthorized: false // This line will fix new error
     }
   },
-  logging: true,
+  logging: false,
 })
 
 

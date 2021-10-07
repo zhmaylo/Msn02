@@ -10,10 +10,6 @@ const Task = sequelize.define("task", {
     rating: DataTypes.STRING,
     task: DataTypes.STRING,
 })
-    ; (async () => {
-        // await sequelize.sync({ force: true })
-        await sequelize.sync()
-    })()
 
 module.exports = Task;
 

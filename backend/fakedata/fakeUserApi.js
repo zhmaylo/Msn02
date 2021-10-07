@@ -1,15 +1,15 @@
-const {userCreate} = require('../api/userDbApi');
+const { createUser } = require('../api/userDbApi');
 const userdata = require('./user.db');
 
-const userdateToDB = async () => {
+const userdateToUser = async () => {
     userdata.forEach(async (item) => {
-        await userCreate(item);
+        await createUser(item);
     })
     return;
 }
 
 
 module.exports = {
-    userdateToDB
+    userdateToUser
 }
 

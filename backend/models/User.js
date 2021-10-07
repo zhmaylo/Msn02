@@ -10,11 +10,7 @@ const User = sequelize.define('user', {
     },
     name: DataTypes.STRING,
 })
-;(async () => {
-    // await sequelize.sync({ force: true })
-    await sequelize.sync()
-})()
-// User.drop()
+
 User.hasMany(Task);
 
 module.exports = User

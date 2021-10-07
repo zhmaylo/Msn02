@@ -9,6 +9,11 @@ const getSizeModel = async (model) => {
     return count[0].countid;
 }
 
+const clearModel = async (model) => {
+    await model.sync({ force: true })
+}
+
 module.exports={
-    getSizeModel
+    getSizeModel,
+    clearModel
 }
