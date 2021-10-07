@@ -13,7 +13,7 @@ const clearModel = async (model) => {
     await model.sync({ force: true })
 }
 
-module.exports={
+module.exports = {
     getSizeModel,
     clearModel
 }

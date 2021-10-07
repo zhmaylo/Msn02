@@ -23,6 +23,10 @@ const userdata = [
         "uid": "06",
         "name": "Roger May",
     },
+    {
+        "uid": "109751285978140171006",
+        "name": "Дмитрий Жмайло",
+    }
 ]
     
 module.exports = userdata

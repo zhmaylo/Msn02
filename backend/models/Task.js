@@ -8,7 +8,7 @@ const Task = sequelize.define("task", {
     condition: DataTypes.TEXT,
     answer: DataTypes.STRING,
     rating: DataTypes.STRING,
-    task: DataTypes.STRING,
+    tags: DataTypes.STRING,
 })
 
 module.exports = Task;

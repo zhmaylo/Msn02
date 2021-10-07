@@ -14,6 +14,20 @@ const createUser = async (item) => {
     };
 }
 
+const getuser = async (userUID) => {
+    const user = await User.findOne({ where: { uid: userUID } })
+        .catch(err => console.err("🚀 ~ getuser() ~ err", err));
+    return user;
+}
 
+const gettasks = async (user) => {
+    const tasks = await user.getTasks()
+        .catch(err => console.log("🚀 gettasks() ~ err ~ ", err));
+    return tasks;
+}
 
-module.exports = { createUser };
+module.exports = {
+    createUser,
+    getuser,
+    gettasks,
+};

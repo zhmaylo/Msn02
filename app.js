@@ -11,6 +11,7 @@ app.use(express.json({ extended: true }))
 
 app.use('/admin', require('./backend/routes/admin.routes'))
 app.use('/login', require('./backend/routes/login.routes'))
+app.use('/userpage', require('./backend/routes/userpage.routes'))
 
 if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(path.join(__dirname, 'client', 'build')))

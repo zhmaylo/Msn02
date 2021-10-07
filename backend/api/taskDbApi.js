@@ -8,7 +8,7 @@ const createTask = async (user, task) => {
         condition: task.condition,
         answer: task.answer,
         rating: task.rating,
-        task: task.task,
+        tags: task.tags,
     }).catch(err => console.err("🚀 createTask() ~ line 11 ~ err  ", err));
     console.log("🚀 createTask - Ok  ");
 }
