@@ -15,7 +15,7 @@ export const NoTaskCmp = (task) => {
                     </Card.Header>
                     <Card.Body>
                         <div className="titleNoTask">
-                            <p>{loc.TheUserHasNoTasksYet[cont.lang]}</p>
+                            <p>{loc.NoTaskYet[cont.lang]}</p>
                         </div>
                     </Card.Body>
                 </Card>

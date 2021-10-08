@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Container from "react-bootstrap/Container";
 import { Loading } from "../components/LoadingCmp/LoadingCmp";
@@ -12,8 +12,8 @@ export const AdminPage = () => {
 
     const { getList } = useGetList();
 
-    useEffect( () => {
-         getList(setLoading, setUserList )
+    useEffect(() => {
+        getList(setLoading, setUserList)
     }, [getList])
 
     if (!isLoading) return (<Loading />)

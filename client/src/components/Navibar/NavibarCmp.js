@@ -23,7 +23,7 @@ export const Navibar = () => {
         } return (<LoginCmp />)
     }
 
-    const NavLink = () => {
+    const AdminPanel = () => {
         return (
             <>
                 <Nav.Link href={`/mypage`}> {loc.MyPage[cont.lang]} </Nav.Link>
@@ -40,10 +40,9 @@ export const Navibar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/main">{loc.Main[cont.lang]}</Nav.Link>
-                        {(cont.userData.isAuth) && (<NavLink />)}
+                                        {(cont.userData.isAuth) && (<AdminPanel />)}
                     </Nav>
-                    <div className="search col-lg-2 col-xl-4 col-xxl-5" >
+                    <div className="search col-lg-3 col-xl-4 col-xxl-5" >
                         <Search />
                     </div>
                     <div className="toggleLogout" >

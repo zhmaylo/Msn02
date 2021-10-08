@@ -13,9 +13,7 @@ function App() {
   const { themeRef, setThemeState } = useTheme();
   const { lang, setLocaleState } = useLocale();
   const { userData, sendUserDataToState } = useUserState();
-  console.log('🚀 ~ file: App.js ~ line 16 ~ App ~ userData', userData);
-
-
+  
   return (
     <Context.Provider value={{ setThemeState, setLocaleState, lang, userData, sendUserDataToState }} >
 

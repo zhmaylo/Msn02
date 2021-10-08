@@ -17,7 +17,7 @@ export const UserTableCmp = ({ userList }) => {
                 </tr>
             </thead>
             <tbody>
-                {userList.map((item, index) => {
+                {userList.map((item) => {
                     return (
                         <tr key={item.id}>
                             <td>{item.uid}</td>

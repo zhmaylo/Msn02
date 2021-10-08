@@ -1,8 +1,5 @@
 {
-    "Main": {
-        "ru-RU": "Главная",
-        "en-EN": "Main"
-    },
+   
     "AdminPanel": {
         "ru-RU": "Админ панель",
         "en-EN": "Admin panel"
@@ -31,9 +28,9 @@
         "ru-RU": "Имя пользователя",
         "en-EN": "User name"
     },
-    "TheUserHasNoTasksYet": {
-        "ru-RU": "У пользователя еще нет задач",
-        "en-EN": "The user has no tasks yet"
+    "NoTaskYet": {
+        "ru-RU": "Задач пока нет",
+        "en-EN": "No tasks yet"
     },
     "personalPage": {
         "ru-RU": "личная страница",
