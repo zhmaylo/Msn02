@@ -2,11 +2,9 @@
 const message = require('../const/message.json')
 
 export const request = (async (url, method = 'GET', body = null, headers = {}) => {
-    // console.log("🚀 ~ file: requestApi.js ~ line 5 ~ headers", headers);
     try {
         const response = await getRequest(url, method, body, headers);
         const data = await response.json()
-        // console.log('🚀 ~ file: httpApi.js ~ line 15 ~ request ~ data', data);
         isResponseFail(response.ok, data);
         return data;
     }
@@ -22,9 +20,7 @@ const isResponseFail = (res, data) => {
 const getRequest = async (url, method, body, headers) => {
     let data = getBodyHead(body, headers);
     body = data.body;
-    // console.log("🚀 ~ file: requestApi.js ~ line 25 ~ body", body);
     headers = data.headers;
-    // console.log("🚀 ~ file: requestApi.js ~ line 27 ~ headers", headers);
     return (await fetch(url, { method, body, headers }))
 }
 

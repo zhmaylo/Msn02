@@ -14,4 +14,3 @@ export const useGetList = () => {
     return {getList}
 }
 
-// module.exports = useGetUserList;
