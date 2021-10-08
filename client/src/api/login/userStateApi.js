@@ -1,4 +1,4 @@
-import { getStore } from "../storageApi";
+import { getStore } from "../storage/storageApi";
 import { KEY_LOGIN_NAME, KEY_LOGIN_ID } from '../../const/storageKeyConst';
 import { useEffect, useState } from 'react';
 import { getUserIDName } from "./userStoreApi";

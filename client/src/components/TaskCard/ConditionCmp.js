@@ -1,5 +1,5 @@
 import React from 'react';
-import "./AnswerCmp.css";
+import "./ConditionCmp.css";
 import Accordion from 'react-bootstrap/Accordion';
 
 export const ConditionCmp = () => {

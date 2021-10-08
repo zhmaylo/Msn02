@@ -8,7 +8,7 @@ export const AnswerCmp = () => {
             <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="1">
           
-                    <Accordion.Header className="header">Ответ </Accordion.Header>
+                    <Accordion.Header className="headerAnswer">Ответ </Accordion.Header>
           
                     <Accordion.Body>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

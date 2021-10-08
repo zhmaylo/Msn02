@@ -1,4 +1,4 @@
-import { setStore } from "../storageApi";
+import { setStore } from "../storage/storageApi";
 import { KEY_LOGIN_NAME, KEY_LOGIN_ID } from '../../const/storageKeyConst';
 
 export const sendUserDataToStorage = (data) => {

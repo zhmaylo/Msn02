@@ -13,7 +13,7 @@ router.post('/admin', (req, res) => {
 
     // console.log("🚀 ~ file: hello.routes.js ~ line 19 ~ json(links)", links);
     // res.send('Hello from B!');
-    res.json({ "hello": "Hello admin POST" })
+    // res.json({ "hello": "Hello admin POST" })
 })
 
 module.exports = router

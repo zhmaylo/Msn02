@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { KEY_THEME } from "../const/storageKeyConst";
-import { getStoreCurrent } from "./storageToggleApi";
+import { getStoreCurrent } from "./storage/storageToggleApi";
 
 const getRefTheme = (str) => {
     return ("https://bootswatch.com/5/" + str + "/bootstrap.min.css")

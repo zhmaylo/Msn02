@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { en_EN, ru_RU } from "../const/localeConst";
 import { KEY_LOCALE } from "../const/storageKeyConst";
-import { getStoreCurrent } from "./storageToggleApi";
+import { getStoreCurrent } from "./storage/storageToggleApi";
 
 
 export const useLocale = () => {

@@ -1,11 +1,11 @@
 import React from 'react';
 import "./HeaderCmp.css";
 
-export const HeaderCmp = () => {
+export const HeaderCmp = (title) => {
     return (
         <div className="header">
             <span>
-                Title
+                {/* {title} */}
             </span>
             <span>
                 Рейтинг

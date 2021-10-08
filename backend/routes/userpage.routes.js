@@ -6,10 +6,9 @@ const User = require('../models/User');
 const router = express.Router();
 
 
-
 router.get('/:id', async (req, res) => {
     try {
-        // console.log("🚀 ~ file: userpage.routes.js ~ line 13 ~ req.params.id", req.params.id, " ");
+        console.log("🚀 ~ file: userpage.routes.js ~ line 13 ~ req.params.id", req.params.id, " ");
         const user = await getuser(req.params.id);
         // console.log("🚀 ~ file: userpage.routes.js ~ line 14 ~ user", user, " ");
         const tasks = await gettasks(user);

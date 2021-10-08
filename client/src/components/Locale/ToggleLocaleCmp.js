@@ -2,7 +2,7 @@ import React from "react"
 // import { getStoreCurrent, getStoreNext } from "../api/storageToggleApi"
 import Button from 'react-bootstrap/Button'
 import { KEY_LOCALE } from "./../../const/storageKeyConst";
-import { getStoreCurrent, getStoreNext } from './../../api/storageToggleApi';
+import { getStoreCurrent, getStoreNext } from '../../api/storage/storageToggleApi';
 
 
 export const ToggleLocale = ({ onChange }) => {
