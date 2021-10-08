@@ -16,7 +16,7 @@ export const Routes = () => {
                 <>
                     <Route path="/admin" exact> <AdminPage /> </Route>
                     <Route path="/mypage" exact> <MyPage /> </Route>
-                    <Route path="/userpage/:id"> <UserPage /> </Route>
+                    <Route path="/userpage/:id/:name"> <UserPage /> </Route>
                 </>
             )
         return (<Redirect to="/main" />)

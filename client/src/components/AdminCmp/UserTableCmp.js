@@ -1,11 +1,11 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom'
-import { Context } from './../../context/Context';
+import { Context } from '../../context/Context';
 import { useContext } from 'react';
 const loc = require("../../const/locale.json");
 
-export const UserTable = ({ userList }) => {
+export const UserTableCmp = ({ userList }) => {
     const cont = useContext(Context)
    
     return (
@@ -22,7 +22,7 @@ export const UserTable = ({ userList }) => {
                         <tr key={item.id}>
                             <td>{item.uid}</td>
                             <td>
-                                <Link to={`/userpage/${item.uid}`}>{item.name}</Link>
+                                <Link to={`/userpage/${item.uid}/${item.name}`}>{item.name}</Link>
                             </td>
                         </tr>
                     )

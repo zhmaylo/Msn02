@@ -1,26 +1,30 @@
 import React from 'react';
-import "./TaskCardCmp.css";
+
 import Card from "react-bootstrap/Card";
 import { HeaderCmp } from './HeaderCmp';
 import { ConditionCmp } from './ConditionCmp';
 import { AnswerCmp } from './AnswerCmp';
+import { TagsCmp } from './TagsCmp';
 
 
-export const TaskCardCmp = (task) => {
+export const TaskCardCmp = ({ taskOfUser }) => {
     return (
         <>
-            <p>Страничка Сидр Сидоровича</p>
             <div className="task col-md-12 col-lg-8 col-xl-8 col-xxl-8 offset-lg-2 offset-xxl-2 ">
                 <Card>
                     <Card.Header>
-                        <HeaderCmp title={task.title} />
+                        <HeaderCmp name={taskOfUser.name} rating={taskOfUser.rating} />
                     </Card.Header>
-                    <Card.Body>
-                        <ConditionCmp />
+                    <Card.Body >
+                        <ConditionCmp condition={taskOfUser.condition} />
                     </Card.Body>
-                    <Card.Footer>Теги </Card.Footer>
                     <Card.Footer>
-                        <AnswerCmp />
+            
+                        <TagsCmp tags={taskOfUser.tags} />
+                  
+                    </Card.Footer>
+                    <Card.Footer>
+                        <AnswerCmp answer={taskOfUser.answer} />
                     </Card.Footer>
                 </Card>
             </div>

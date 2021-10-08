@@ -31,13 +31,21 @@
         "ru-RU": "Имя пользователя",
         "en-EN": "User name"
     },
-    "2": {
-        "ru-RU": "",
-        "en-EN": ""
+    "TheUserHasNoTasksYet": {
+        "ru-RU": "У пользователя еще нет задач",
+        "en-EN": "The user has no tasks yet"
     },
-    "3": {
-        "ru-RU": "",
-        "en-EN": ""
+    "personalPage": {
+        "ru-RU": "личная страница",
+        "en-EN": "personal page"
+    },
+    "Tags": {
+        "ru-RU": "Теги",
+        "en-EN": "Tags"
+    },
+    "Answer": {
+        "ru-RU": "Ответ",
+        "en-EN": "Answer"
     }
 }
 

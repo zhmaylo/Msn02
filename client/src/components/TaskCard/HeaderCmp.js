@@ -1,14 +1,13 @@
 import React from 'react';
-import "./HeaderCmp.css";
 
-export const HeaderCmp = (title) => {
+export const HeaderCmp = ({name, rating }) => {
     return (
-        <div className="header">
+        <div className="d-flex justify-content-between">
             <span>
-                {/* {title} */}
+                {name}
             </span>
             <span>
-                Рейтинг
+                {rating} <i class="bi bi-star"></i>
             </span>
         </div>
 
