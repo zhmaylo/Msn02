@@ -4,6 +4,7 @@ const message = require('../const/message.json')
 export const request = (async (url, method = 'GET', body = null, headers = {}) => {
     try {
         const response = await getRequest(url, method, body, headers);
+        // console.log("🚀 ~ file: requestApi.js ~ line 7 ~ response", response);
         const data = await response.json()
         isResponseFail(response.ok, data);
         return data;

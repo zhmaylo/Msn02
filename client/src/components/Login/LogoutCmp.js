@@ -6,8 +6,6 @@ import { removeUserDataFromStore } from "../../api/login/userStoreApi";
 
 export const LogoutCmp = ({ onChange }) => {
     const cont = useContext(Context)
-    console.log('🚀 ~ file: LogoutCmp.js ~ line 14 ~ LogoutCmp ~ cont.userData.name', cont.userData.name);
-
     return (
         <div>
 
@@ -18,12 +16,9 @@ export const LogoutCmp = ({ onChange }) => {
                     removeUserDataFromStore()
                     cont.sendUserDataToState({ id: null, name: null });
                 }}
-
             >
                 <i className="bi bi-box-arrow-right icon-exit" ></i>
             </Button>
-
-
         </div>
     )
 }

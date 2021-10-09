@@ -11,10 +11,10 @@ const createTask = async (user, task) => {
     console.log("🚀 createTask - Ok  ");
 }
 
-const findAllAndSort = async (field, direction) => {
+const findAllAndSort = async (field, sortby) => {
     const tasks = await Task.findAll({
         order: [
-            [field, direction],
+            [field, sortby],
         ],
     }).catch(err => console.err("🚀 findAllAndSort()) ~ err  ", err));;
     return tasks;

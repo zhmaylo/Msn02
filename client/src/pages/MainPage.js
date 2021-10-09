@@ -6,23 +6,29 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { useGetTasksAndOrder } from "../api/mainpageApi";
 
 export const MainPage = () => {
-    const [tasksOrdered, setTaskOrdered] = useState(); 
-    const {getTasksAndOrder} = useGetTasksAndOrder ()
-    useEffect(()=>{
-         getTasksAndOrder('createdAt').then ((task) => {
-            //  setTaskOrdered(task);
-             console.log("🚀 ~ file: MainPage.js ~ line 12 ~ useEffect ~ task", task);
+    const [tasksOrdered, setTaskOrdered] = useState();
+
+    const { getTasksAndOrder } = useGetTasksAndOrder()
+
+    useEffect(() => {
+        getTasksAndOrder('createdAt').then((task) => {
+            setTaskOrdered(task);
+            console.log("🚀 ~ file: MainPage.js ~ line 12 ~ useEffect ~ task", task);
         })
-    },[getTasksAndOrder])
+    }, [getTasksAndOrder])
 
     return (
-        <ButtonToolbar aria-label="Toolbar with button groups" className="d-flex pt-3 justify-content-center">
-            <ButtonGroup className="me-2" aria-label="First group" >
-                <Button variant="outline-secondary" >По дате</Button>
-            </ButtonGroup>
-            <ButtonGroup className="me-2" aria-label="Second group">
-                <Button variant="outline-secondary">По рейтингу</Button>
-            </ButtonGroup>
-        </ButtonToolbar>
+
+        <div className="btn d-flex justify-content-center">
+            <Button
+                variant="outline-secondary"
+                onClick={() => { }}
+            >По дате</Button>
+            <div className="btn">
+                <Button variant="outline-secondary" >По рейтингу</Button>
+            </div>
+        </div>
+
+        
     )
 }

@@ -1,13 +1,12 @@
 
 const express = require('express');
+const { findAllAndSort } = require('../api/taskDbApi');
 
 const router = express.Router();
 
-router.get('/sortby"', async (req, res) => {
-    console.log("🚀 ~ file: mainpage.routes.js ~ line 7 ~ router.get ~ req", req)
-
+router.get('/sortby', async (req, res) => {
     try {
-        const tasks = await findAllAndSort('createdAt', 'DESC');
+        const tasks = await findAllAndSort(req.query.field, req.query.sortby);
         res.json(tasks);
     }
     catch (e) {
