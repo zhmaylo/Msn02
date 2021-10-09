@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 import Container from "react-bootstrap/Container";
-import { Loading } from "../components/LoadingCmp/LoadingCmp";
+import { Loading } from "../components/Loading/LoadingCmp";
 import { useGetList } from "../api/adminApi";
-import { UserTableCmp } from './../components/AdminCmp/UserTableCmp';
+import { UserTableCmp } from '../components/Admin/UserTableCmp';
+import { STYLE_TABLE } from './../const/style';
 
 export const AdminPage = () => {
 
@@ -18,7 +19,7 @@ export const AdminPage = () => {
 
     if (!isLoading) return (<Loading />)
     return (
-        <Container className="col-sm-10 col-md-9 col-lg-7 col-xl-7 col-xxl-5">
+        <Container className={STYLE_TABLE}>
             <UserTableCmp userList={userList} />
         </Container>
     )

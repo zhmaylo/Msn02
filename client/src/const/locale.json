@@ -43,6 +43,18 @@
     "Answer": {
         "ru-RU": "Ответ",
         "en-EN": "Answer"
+    },
+    "ByDate": {
+        "ru-RU": "По дате",
+        "en-EN": "By date"
+    },
+    "ByRating": {
+        "ru-RU": "По рейтингу",
+        "en-EN": "By rating"
+    },
+    "MyTasks": {
+        "ru-RU": "Мои задачи",
+        "en-EN": "My tasks"
     }
 }
 

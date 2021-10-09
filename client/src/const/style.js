@@ -1,0 +1,1 @@
+export const STYLE_TABLE = "col-sm-10 col-md-9 col-lg-7 col-xl-7 col-xxl-5";

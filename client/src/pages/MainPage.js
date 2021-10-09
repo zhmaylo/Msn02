@@ -1,34 +1,35 @@
 import React, { useEffect, useState } from "react";
 
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { useGetTasksAndOrder } from "../api/mainpageApi";
+import { TaskCardListCmp } from './../components/TaskCard/TaskCardListCmp';
+import { Loading } from './../components/Loading/LoadingCmp';
+import { SortBarCmp } from './../components/MainPage/SortBarCmp';
+
 
 export const MainPage = () => {
     const [tasksOrdered, setTaskOrdered] = useState();
-
+    const [isLoading, setIsLoading] = useState(false);
     const { getTasksAndOrder } = useGetTasksAndOrder()
 
     useEffect(() => {
         getTasksAndOrder('createdAt').then((task) => {
             setTaskOrdered(task);
             console.log("🚀 ~ file: MainPage.js ~ line 12 ~ useEffect ~ task", task);
+            setIsLoading(true)
         })
     }, [getTasksAndOrder])
 
+    const getTasksList = (field) => {
+        getTasksAndOrder(field).then((task) => { setTaskOrdered(task) })
+    }
+
+    if (!isLoading) {
+        return (<Loading />)
+    }
     return (
-
-        <div className="btn d-flex justify-content-center">
-            <Button
-                variant="outline-secondary"
-                onClick={() => { }}
-            >По дате</Button>
-            <div className="btn">
-                <Button variant="outline-secondary" >По рейтингу</Button>
-            </div>
-        </div>
-
-        
+        <>
+            <SortBarCmp getTasksList={getTasksList}/>
+            <TaskCardListCmp tasksOfUser={tasksOrdered} />
+        </>
     )
 }

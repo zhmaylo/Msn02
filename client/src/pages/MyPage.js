@@ -4,10 +4,11 @@ import { Redirect } from 'react-router-dom';
 
 export const MyPage = () => {
     const cont = useContext(Context)
-    if (!cont.userData) <Redirect to="/main" />
+    // if (!cont.userData) <Redirect to="/main" />
     return (
         <>
-            <Redirect to={`/userpage/${cont.userData.id}/${cont.userData.name}`}></Redirect>
+            <Redirect to={`/userpage/${cont.userData.id}/${cont.userData.name}/true`}></Redirect>
+            {/* <Redirect to={`/userpage/01/${cont.userData.name}/true`}></Redirect> */}
         </>
     )
 }

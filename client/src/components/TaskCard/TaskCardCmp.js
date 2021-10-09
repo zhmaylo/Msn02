@@ -5,12 +5,13 @@ import { HeaderCmp } from './HeaderCmp';
 import { ConditionCmp } from './ConditionCmp';
 import { AnswerCmp } from './AnswerCmp';
 import { TagsCmp } from './TagsCmp';
+import { STYLE_TABLE } from '../../const/style';
 
 
 export const TaskCardCmp = ({ taskOfUser }) => {
     return (
         <>
-            <div className="task col-md-12 col-lg-8 col-xl-8 col-xxl-8 offset-lg-2 offset-xxl-2 ">
+            <div className={STYLE_TABLE}>
                 <Card>
                     <Card.Header>
                         <HeaderCmp name={taskOfUser.name} rating={taskOfUser.rating} />

@@ -10,5 +10,5 @@ export const useGetTasksAndOrder = () => {
 }
 
 const getQueryString = (field) => {
-    return `/mainpage/sortby?field=${field}&sortby=DESC`
+    return (`/mainpage/sortby?field=${field}&sortby=DESC`)
 }
