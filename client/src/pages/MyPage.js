@@ -24,13 +24,12 @@ export const MyPage = () => {
         })
     }, [getTasksOfUser, cont.userData.id])
 
-
-
+  
     const ShowTaskCard = () => {
         return (
             <>
                 <div className={TASK_CARD_STYLE}>
-                    <BackButtonCmp />
+                    <BackButtonCmp link={'/mypage'}/>
                     <TaskCardCmp taskOfUser={selectedTask} />
                 </div>
             </>

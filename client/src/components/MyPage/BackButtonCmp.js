@@ -5,12 +5,12 @@ import Button from 'react-bootstrap/Button';
 
 const loc = require("../../const/locale.json");
 
-export const BackButtonCmp = () => {
+export const BackButtonCmp = ({link}) => {
     const cont = useContext(Context)
     return (
         <>
             <Button variant="link"
-                href={'/mypage'}
+                href={link}
             >
                 <i class="bi bi-arrow-left"></i> <span>{loc.Back[cont.lang]} </span>
             </Button>

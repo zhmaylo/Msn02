@@ -6,6 +6,7 @@ import { TitlePageCmp } from "../components/TaskCard/TitlePageCmp";
 import { useParams } from 'react-router-dom';
 import { TaskCardListCmp } from './../components/TaskCard/TaskCardListCmp';
 import { TASK_CARD_STYLE } from './../const/style';
+import { BackButtonCmp } from './../components/MyPage/BackButtonCmp';
 
 
 export const UserPage = () => {
@@ -30,7 +31,7 @@ export const UserPage = () => {
     }
     return (
         <div className={TASK_CARD_STYLE}>
-            <TitlePageCmp name={username} />
+            <BackButtonCmp link={'/admin'} /> <TitlePageCmp name={username} />
             {(tasksOfUser.length === 0) ? (<NoTaskCmp />) : (<TaskCardListCmp tasksOfUser={tasksOfUser} />)}
         </div>
     )
