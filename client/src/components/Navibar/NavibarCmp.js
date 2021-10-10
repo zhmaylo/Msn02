@@ -42,7 +42,7 @@ export const Navibar = () => {
                     <Nav className="me-auto">
                                         {(cont.userData.isAuth) && (<AdminPanel />)}
                     </Nav>
-                    <div className="search col-lg-3 col-xl-4 col-xxl-5" >
+                    <div className="search col-lg-4 col-xl-5 col-xxl-6" >
                         <Search />
                     </div>
                     <div className="toggleLogout" >

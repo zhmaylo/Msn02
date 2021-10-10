@@ -55,6 +55,10 @@
     "MyTasks": {
         "ru-RU": "Мои задачи",
         "en-EN": "My tasks"
+    },
+    "Back": {
+        "ru-RU": "Назад",
+        "en-EN": "Back"
     }
 }
 

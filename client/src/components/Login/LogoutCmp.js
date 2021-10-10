@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import "./LogoutCmp.css"
 import Button from 'react-bootstrap/Button';
 import { Context } from '../../context/Context';
 import { removeUserDataFromStore } from "../../api/login/userStoreApi";
@@ -8,10 +7,8 @@ export const LogoutCmp = ({ onChange }) => {
     const cont = useContext(Context)
     return (
         <div>
-
-            <span style={{ marginRight: 10 }} >{cont.userData.name} </span>
+            <span style={{ marginRight: 10, fontSize: 12 }} >{cont.userData.name} </span>
             <Button variant={"outline-secondary"}
-                // onClick={() => { onChange() }}
                 onClick={() => {
                     removeUserDataFromStore()
                     cont.sendUserDataToState({ id: null, name: null });

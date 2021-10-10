@@ -5,30 +5,25 @@ import { HeaderCmp } from './HeaderCmp';
 import { ConditionCmp } from './ConditionCmp';
 import { AnswerCmp } from './AnswerCmp';
 import { TagsCmp } from './TagsCmp';
-import { STYLE_TABLE } from '../../const/style';
+
 
 
 export const TaskCardCmp = ({ taskOfUser }) => {
+    console.log("🚀 ~ file: TaskCardCmp.js ~ line 12 ~ taskOfUser", taskOfUser);
     return (
-        <>
-            <div className={STYLE_TABLE}>
-                <Card>
-                    <Card.Header>
-                        <HeaderCmp name={taskOfUser.name} rating={taskOfUser.rating} />
-                    </Card.Header>
-                    <Card.Body >
-                        <ConditionCmp condition={taskOfUser.condition} />
-                    </Card.Body>
-                    <Card.Footer>
-            
-                        <TagsCmp tags={taskOfUser.tags} />
-                  
-                    </Card.Footer>
-                    <Card.Footer>
-                        <AnswerCmp answer={taskOfUser.answer} />
-                    </Card.Footer>
-                </Card>
-            </div>
-        </>
+        <Card>
+            <Card.Header>
+                <HeaderCmp name={taskOfUser.name} rating={taskOfUser.rating} />
+            </Card.Header>
+            <Card.Body >
+                <ConditionCmp condition={taskOfUser.condition} />
+            </Card.Body>
+            <Card.Footer>
+                <TagsCmp tags={taskOfUser.tags} />
+            </Card.Footer>
+            <Card.Footer>
+                <AnswerCmp answer={taskOfUser.answer} />
+            </Card.Footer>
+        </Card>
     )
 }

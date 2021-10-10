@@ -1,14 +1,15 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
-import { Link } from 'react-router-dom'
 import { Context } from '../../context/Context';
 import { useContext } from 'react';
+import Button from 'react-bootstrap/Button';
+
+
 const loc = require("../../const/locale.json");
 
-export const TaskTableCmp = ({ tasksList }) => {
-console.log("🚀 ~ file: TaskTableCmp.js ~ line 9 ~ tasksList", tasksList);
+export const TaskTableCmp = ({ tasksOfUser, setSelectedTask }) => {
     const cont = useContext(Context)
-   
+    
     return (
         <Table>
             <thead>
@@ -17,14 +18,19 @@ console.log("🚀 ~ file: TaskTableCmp.js ~ line 9 ~ tasksList", tasksList);
                 </tr>
             </thead>
             <tbody>
-                {tasksList.map((item) => {
+                {tasksOfUser.map((item) => {
                     return (
                         <tr key={item.id}>
-                            {/* <td>{item.name}</td> */}
                             <td>
-                                <Link to={`/taskpage/${item}`}>{item.name}</Link>
+                                <Button variant="link"
+                                    onClick={() => {
+                                        console.log("🚀 ~ file: TaskTableCmp.js ~ line 34 ~ tasksOfUser");
+                                        setSelectedTask(item);
+                                    }}
+                                >
+                                    {item.name}
+                                </Button>
                             </td>
-                            <td></td>
                         </tr>
                     )
                 })}

@@ -4,7 +4,8 @@ import Container from "react-bootstrap/Container";
 import { Loading } from "../components/Loading/LoadingCmp";
 import { useGetList } from "../api/adminApi";
 import { UserTableCmp } from '../components/Admin/UserTableCmp';
-import { STYLE_TABLE } from './../const/style';
+import { TASK_CARD_STYLE } from './../const/style';
+
 
 export const AdminPage = () => {
 
@@ -19,7 +20,7 @@ export const AdminPage = () => {
 
     if (!isLoading) return (<Loading />)
     return (
-        <Container className={STYLE_TABLE}>
+        <Container className={TASK_CARD_STYLE}>
             <UserTableCmp userList={userList} />
         </Container>
     )

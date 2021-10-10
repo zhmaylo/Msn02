@@ -1,1 +1,3 @@
-export const STYLE_TABLE = "col-sm-10 col-md-9 col-lg-7 col-xl-7 col-xxl-5";
+
+
+export const TASK_CARD_STYLE = 'col-md-12 col-lg-8 col-xl-8 col-xxl-8 offset-lg-2 offset-xxl-2'

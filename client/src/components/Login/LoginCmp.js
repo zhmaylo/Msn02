@@ -4,7 +4,6 @@ import { Context } from '../../context/Context';
 import { Fa1cebookLoginCmp } from "../Social/FacebookLoginCmp";
 import { GoogleLoginCmp } from '../Social/GoogleLoginCmp';
 
-import "./LoginCmp.css"
 
 const loc = require("../../const/locale.json");
 export const LoginCmp = () => {
