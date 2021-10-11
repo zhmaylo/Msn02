@@ -1,5 +1,4 @@
 const taskdata = require('./task.db');
-const User = require('../models/User');
 const Task = require('../models/Task');
 const { createTask } = require('../api/taskDbApi');
 const { getuser } = require('../api/userDbApi');

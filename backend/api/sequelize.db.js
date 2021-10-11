@@ -14,5 +14,9 @@ const sequelize = new Sequelize(postgresURI, {
 })
 
 
-module.exports = sequelize;
+module.exports = {
+  sequelize, 
+  postgresURI
+}
+
 

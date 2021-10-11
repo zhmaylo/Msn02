@@ -1,4 +1,4 @@
-const sequelize = require("./sequelize.db");
+const {sequelize} = require("./sequelize.db");
 
 
 const getSizeModel = async (model) => {

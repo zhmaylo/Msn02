@@ -4,14 +4,17 @@ const { taskdataToTask } = require('./fakeTaskApi')
 const User = require('../models/User');
 const Task = require('../models/Task');
 const { getSizeModel, clearModel } = require('../api/commonDbApi');
+const { addFTSToTask } = require('../api/fts');
 
 
 const fakeDB = async () => {
     // await clearModel(User);
     // await clearModel(Task);
 
-    await userdateToUser();
-    await taskdataToTask();
+    // await userdateToUser();
+    // await taskdataToTask();
+    
+    // await addFTSToTask();
     await sizeModelPrintToConsole();
 }
 
@@ -22,4 +25,7 @@ const sizeModelPrintToConsole = async () => {
 }
 
 
-module.exports = fakeDB;
+module.exports = {
+    fakeDB,
+    sizeModelPrintToConsole
+}

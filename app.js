@@ -1,7 +1,8 @@
 
 const express = require('express');
 const path = require('path');
-const fakeDB = require('./backend/fakedata/fake');
+const {fakeDB} = require('./backend/fakedata/fake');
+const {startFTS} = require('./backend/api/fts');
 
 
 const app = express();
