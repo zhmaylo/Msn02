@@ -4,7 +4,7 @@ const { taskdataToTask } = require('./fakeTaskApi')
 const User = require('../models/User');
 const Task = require('../models/Task');
 const { getSizeModel, clearModel } = require('../api/commonDbApi');
-const { addFTSToTask } = require('../api/fts');
+const { addFTSToTask, selectTasks } = require('../api/fts');
 
 
 const fakeDB = async () => {

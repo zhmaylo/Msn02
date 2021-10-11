@@ -14,16 +14,6 @@ router.get('/sortby', async (req, res) => {
     }
 })
 
-// router.get('/sortbyrating', async (req, res) => {
-//     try {
-//         const tasks = await findAllAndSort('rating', 'DESC');
-//         res.json(tasks);
-//     }
-//     catch (e) {
-//         res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
-//     }
-// })
-
 router.post('/', (req, res) => {
 
 })

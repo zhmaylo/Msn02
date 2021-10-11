@@ -13,6 +13,7 @@ const client = new Client({
     },
 })
 
+client.connect()
 const addTsvectorToTasks = async () => {
     try {
         const data = await client.query("ALTER TABLE tasks ADD COLUMN task_index_col tsvector");
@@ -46,6 +47,13 @@ const selectAllFromTasks = async () => {
     catch { err => console.err(err) }
 }
 
+const selectTasks = async (searchStr) => {
+    let data;
+    data = await client.query("SELECT * FROM tasks WHERE task_index_col @@ plainto_tsquery('russian','" + searchStr + "')");
+    console.log("🚀 ~ file: fts.js ~ line 63 ~ data", data.err);
+    return data.rows;
+}
+
 const addFTSToTask = async () => {
     client.connect()
     await addTsvectorToTasks()
@@ -57,6 +65,7 @@ const addFTSToTask = async () => {
 
 module.exports = {
     addFTSToTask,
+    selectTasks,
 }
 
 

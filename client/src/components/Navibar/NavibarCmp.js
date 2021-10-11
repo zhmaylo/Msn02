@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 
 import { Context } from '../../context/Context'
-import { Search } from "../SearchCmp"
+import { Search } from "../Search/SearchCmp"
 import { ToggleLocale } from '../Locale/ToggleLocaleCmp';
 import { ToggleTheme } from '../Theme/ToggleThemeCmp';
 import { LoginCmp } from '../Login/LoginCmp';

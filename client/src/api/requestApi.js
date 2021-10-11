@@ -6,6 +6,7 @@ export const request = (async (url, method = 'GET', body = null, headers = {}) =
         const response = await getRequest(url, method, body, headers);
         // console.log("🚀 ~ file: requestApi.js ~ line 7 ~ response", response);
         const data = await response.json()
+        console.log("🚀 ~ file: requestApi.js ~ line 9 ~ data", data);
         isResponseFail(response.ok, data);
         return data;
     }
