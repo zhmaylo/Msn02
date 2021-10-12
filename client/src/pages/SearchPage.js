@@ -19,7 +19,7 @@ export const SearchPage = () => {
         )
     return (
         <Container className={TASK_CARD_STYLE}>
-            <p className="d-flex justify-content-center pt-3"> {loc.SearchingResults[cont.lang]} </p>
+            <p className="d-flex justify-content-center pt-3"> {loc.SearchingResults[cont.lang]} - {cont.searchResult.length}</p>
             <TaskCardListCmp tasksOfUser={cont.searchResult} />
         </Container>
     )
