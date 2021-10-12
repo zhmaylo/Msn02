@@ -1,8 +1,10 @@
 
 const express = require('express');
 const path = require('path');
-const {fakeDB} = require('./backend/fakedata/fake');
-const {startFTS} = require('./backend/api/fts');
+const {fakeDB} = require('./backend/fakedata/fakeDB');
+
+const { initDB } = require('./backend/api/initDB');
+const { sizeModelPrintToConsole } = require('./backend/api/commonDbApi');
 
 
 const app = express();
@@ -27,5 +29,8 @@ if (process.env.NODE_ENV === 'production') {
 app.listen(port, () => console.log(`Server has been started ${port}...`))
 
 //////////////////////////////////////
+// initDB();
 
-fakeDB(); 
+// fakeDB(); 
+
+sizeModelPrintToConsole();

@@ -4,7 +4,6 @@ import { request } from './requestApi';
 
 
 export const debounce = (func, wait = 1000, immediate) => {
-
 	var timeout;
 	return function() {
 		var context = this, args = arguments;
@@ -21,9 +20,9 @@ export const debounce = (func, wait = 1000, immediate) => {
 
 export const useGetSearchResult = () => {
     const getSearchResult =  useCallback(async (data) => {
-        console.log("🚀 ~ file: searchApi.js ~ line 23 ~ data", data);
         let searchRes = await request(`/search?search=${data}`, 'GET', null, {});
-        console.log("🚀 ~ file: searchApi.js ~ line 26 ~ searchRes", searchRes);
+        console.log("🚀 ~ file: searchApi.js ~ line 24 ~ searchRes", searchRes);
+		return searchRes;
     }, []);
     return { getSearchResult }
 }

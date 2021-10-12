@@ -50,17 +50,18 @@ const selectAllFromTasks = async () => {
 const selectTasks = async (searchStr) => {
     let data;
     data = await client.query("SELECT * FROM tasks WHERE task_index_col @@ plainto_tsquery('russian','" + searchStr + "')");
-    console.log("🚀 ~ file: fts.js ~ line 63 ~ data", data.err);
+    // console.log("🚀 ~ file: fts.js ~ line 63 ~ data", data.err, " ");
+    // console.log("🚀 ~ file: fts.js ~ line 63 ~ data", data, " ");
     return data.rows;
 }
 
 const addFTSToTask = async () => {
-    client.connect()
+    // client.connect()
     await addTsvectorToTasks()
     await updateTasks()
     await createTriggerToTasks()
     await selectAllFromTasks()
-    client.end()
+    // client.end()
 }
 
 module.exports = {
@@ -69,64 +70,3 @@ module.exports = {
 }
 
 
-
-
-// const connectType2 = async () => {
-
-//     await client.connect()
-
-//     // ALTER TABLE pgweb ADD COLUMN textsearchable_index_col tsvector;
-//     // UPDATE pgweb SET textsearchable_index_col =
-//     //     to_tsvector('english', coalesce(title, '') || ' ' || coalesce(body, ''));
-
-
-//     client.query("ALTER TABLE tasks ADD COLUMN task_index_col tsvector",
-//     (err, res) => {
-//         console.log("🚀 ~ file: fts.js ~ line 38 ~ err, res", err, res);
-//     })
-
-//     client.query("UPDATE tasks SET task_index_col = to_tsvector('russian', coalesce(name, '') || ' ' || coalesce(condition, ''))",
-//         (err, res) => {
-//             console.log("🚀 ~ file: fts.js ~ line 43 ~ err, res", err, res);
-//         })
-
-//         // CREATE INDEX textsearch_idx ON pgweb USING GIN (textsearchable_index_col);
-//         client.query("CREATE INDEX tasks_idx ON tasks USING GIN (task_index_col)",
-//         (err, res) => {
-//             console.log("🚀 ~ file: fts.js ~ line 49 ~ err, res", err, res);
-//         })
-
-
-//         // SELECT title FROM pgweb
-//         // WHERE textsearchable_index_col @@ to_tsquery('create & table')
-//         // ORDER BY last_mod_date DESC
-//         // LIMIT 10;
-
-//         client.query("SELECT * FROM tasks WHERE task_index_col @@ to_tsquery('russian','которы & час ')",
-//         (err, res) => {
-//             console.log("🚀 ~ file: fts.js ~ line 59 ~ err, res", err, res.row, " ");
-//             client.end()
-//         })
-//     }
-
-// const connectType1 = async () => {
-
-//     await client.connect()
-
-
-
-//     client.query("CREATE INDEX tasks_idx ON tasks USING GIN (to_tsvector('russian', condition))",
-//     (err, res) => {
-//         console.log(err, res)
-
-//     })
-
-//     // "EXPLAIN ANALYZE SELECT * FROM tasks WHERE to_tsvector(condition) @@ to_tsquery('russian',' который')",
-
-//     client.query("SELECT * FROM tasks WHERE to_tsvector('russian', condition) @@ to_tsquery('russian',' который')",
-//     (err, res) => {
-//         console.log(err, res.rows)
-//         client.end()
-//     })
-
-// }

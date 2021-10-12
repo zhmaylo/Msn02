@@ -59,6 +59,14 @@
     "Back": {
         "ru-RU": "Назад",
         "en-EN": "Back"
+    },
+    "SearchingResults": {
+        "ru-RU": "Результаты поиска",
+        "en-EN": "Searching results"
+    },
+    "NothingFound": {
+        "ru-RU": "Ничего не найдено",
+        "en-EN": "Nothing found"
     }
 }
 

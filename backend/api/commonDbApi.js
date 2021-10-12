@@ -1,3 +1,5 @@
+const Task = require("../models/Task");
+const User = require("../models/User");
 const {sequelize} = require("./sequelize.db");
 
 
@@ -13,7 +15,14 @@ const clearModel = async (model) => {
     await model.sync({ force: true })
 }
 
+const sizeModelPrintToConsole = async () => {
+    console.log("🚀 Size 'User'=", await getSizeModel(User), " ")
+    console.log("🚀 Size 'Task'=", await getSizeModel(Task), " ")
+}
+
 module.exports = {
     getSizeModel,
-    clearModel
+    clearModel,
+    sizeModelPrintToConsole
 }
+
