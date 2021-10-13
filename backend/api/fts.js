@@ -14,6 +14,7 @@ const client = new Client({
 })
 
 client.connect()
+
 const addTsvectorToTasks = async () => {
     try {
         const data = await client.query("ALTER TABLE tasks ADD COLUMN task_index_col tsvector");

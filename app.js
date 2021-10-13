@@ -31,6 +31,6 @@ app.listen(port, () => console.log(`Server has been started ${port}...`))
 //////////////////////////////////////
 // initDB();
 
-// fakeDB(); 
+fakeDB(); 
 
 sizeModelPrintToConsole();

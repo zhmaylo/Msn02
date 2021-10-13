@@ -8,7 +8,7 @@ const loc = require("../../const/locale.json");
 export const SortBarCmp = ({ getTasksList }) => {
     const cont = useContext(Context)
     return (
-        <div className="btn d-flex justify-content-center">
+        <div className="d-flex justify-content-center pt-3">
             <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
                 <ToggleButton variant="outline-secondary" id="tbg-radio-1" value={1}
                     onClick={() => {

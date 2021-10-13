@@ -4,11 +4,9 @@ import "./ConditionCmp.css"
 
 export const ConditionCmp = ({ condition }) => {
 
-    const str = "*" + condition + "*";
-
     return (
         <span className="conditionTask">
-            <ReactMarkdown children={str} className="d-flex align-item-justify" />
+            <ReactMarkdown children={condition} className="d-flex align-item-justify" />
         </span>
     )
 }

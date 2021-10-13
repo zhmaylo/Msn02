@@ -5,6 +5,7 @@ import { TaskCardListCmp } from './../components/TaskCard/TaskCardListCmp';
 import { Loading } from './../components/Loading/LoadingCmp';
 import { SortBarCmp } from './../components/MainPage/SortBarCmp';
 import { TASK_CARD_STYLE } from './../const/style';
+import { CloudTagsCmp } from './../components/CloudTags/CloudTagsCmp';
 
 
 export const MainPage = () => {
@@ -28,9 +29,12 @@ export const MainPage = () => {
         return (<Loading />)
     }
     return (
-        <div className={TASK_CARD_STYLE}>
-            <SortBarCmp getTasksList={getTasksList} />
-            <TaskCardListCmp tasksOfUser={tasksOrdered} />
-        </div>
+        <>
+            <div className={TASK_CARD_STYLE}>
+                <SortBarCmp getTasksList={getTasksList} />
+                <CloudTagsCmp />
+                <TaskCardListCmp tasksOfUser={tasksOrdered} />
+            </div>
+        </>
     )
 }
