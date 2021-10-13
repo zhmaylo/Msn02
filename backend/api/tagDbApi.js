@@ -14,9 +14,9 @@ const tagsToTable = (tags) => {
     findAllTags();
     
 }
-const findAllTags = () =>{
-    const tags = Tag.findAll()
-    return tags;
+const findAllTags = async () =>{
+    const tags = await Tag.findAll()
+    console.log("🚀 ~ file: tagDbApi.js ~ line 19 ~ tags", tags);
 }
 
 const tagAddToDB = async (tag) => {
