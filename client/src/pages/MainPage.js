@@ -29,7 +29,7 @@ export const MainPage = () => {
     }
     return (
         <div className={TASK_CARD_STYLE}>
-            <SortBarCmp getTasksList={getTasksList}/>
+            <SortBarCmp getTasksList={getTasksList} />
             <TaskCardListCmp tasksOfUser={tasksOrdered} />
         </div>
     )
