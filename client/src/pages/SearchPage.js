@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Redirect } from 'react-router-dom';
 import { TaskCardListCmp } from '../components/TaskCard/TaskCardListCmp';
 import { TASK_CARD_STYLE } from '../const/style';
 import { Context } from './../context/Context';
@@ -9,18 +8,21 @@ const loc = require('../const/locale.json');
 
 export const SearchPage = () => {
     const cont = useContext(Context);
-    // cont.searchString = 
-    // cont.lastPage = window.location.href;
-    // console.log("🚀 ~ file: SearchPage.js ~ line 13 ~ window.location.href", window.location.href);
+    const local = cont.lang;
+    const message_NothingFound = loc.NothingFound[local];
+    const message_SearchingResults = loc.SearchingResults[local];
+    const searchResult = cont.searchResult;
+
     console.log("🚀 ~ file: SearchPage.js ~ line 16 ~ cont.searchResult", cont.searchResult);
-    if (!cont.searchResult)
+    if ((!searchResult) || (searchResult.length === 0))
         return (
-            <p className="d-flex justify-content-center pt-3"> {loc.NothingFound[cont.lang]} </p>
+            <p className="d-flex justify-content-center pt-3"> {message_NothingFound} </p>
         )
+    const sumResult = searchResult.length;
     return (
         <Container className={TASK_CARD_STYLE}>
-            <p className="d-flex justify-content-center pt-3"> {loc.SearchingResults[cont.lang]} - {cont.searchResult.length}</p>
-            <TaskCardListCmp tasksOfUser={cont.searchResult} />
+            <p className="d-flex justify-content-center pt-3"> {message_SearchingResults} - {sumResult}</p>
+            <TaskCardListCmp tasksOfUser={searchResult} />
         </Container>
     )
 }
