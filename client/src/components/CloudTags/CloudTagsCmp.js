@@ -1,37 +1,32 @@
-import React from 'react';
-import { Context } from '../../context/Context';
-import { useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TagCloud } from 'react-tagcloud'
+import { useGetTagsRequest } from './../../api/cloudTagsApi';
+
 import "./CloudTagsCmp.css"
 
-const loc = require("../../const/locale.json");
+export const CloudTagsCmp = () => {
 
-export const CloudTagsCmp = ({ userList }) => {
-    const cont = useContext(Context)
+    const { getTagsRequest } = useGetTagsRequest();
+    const [tags, setTags] = useState([])
 
-    const data = [
-        { value: 'JavaScript', count: 38 },
-        { value: 'React', count: 30 },
-        { value: 'Nodejs', count: 28 },
-        { value: 'Express.js', count: 25 },
-        { value: 'HTML5', count: 33 },
-        { value: 'MongoDB', count: 18 },
-        { value: 'CSS3', count: 20 },
-    ]
-
+    useEffect(() => {
+        getTagsRequest().then((tagsFromServer) => {
+            console.log("🚀 ~ file: CloudTagsCmp.js ~ line 25 ~ tagsFromServer", tagsFromServer);
+            setTags(tagsFromServer);
+        });
+    }, [getTagsRequest])
 
     return (
         <>
             <TagCloud
                 minSize={12}
                 maxSize={35}
-                tags={data}
+                tags={tags}
                 disableRandomColor={true}
                 onClick={tag => alert(`'${tag.value}' was selected!`)}
                 className="simple-cloud"
             />
         </>
-
     )
 }
 

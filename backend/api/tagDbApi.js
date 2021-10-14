@@ -1,49 +1,23 @@
 const Tag = require("../models/Tag");
-// const { clearModel, sizeModelPrintToConsole } = require("./commonDbApi");
-
-
-// const tagsConst = "таракан,стена,подъезд,жильцы,шахта,час,вопрос";
-// const tagsConst = "авто,стена,авто,жильцы,авто";
-// const tagsConst = "таракан";
-/////////
-// розкоментируй createTask
-/////////
 
 const tagsToTable = async (tags) => {
-    console.log("🚀 ~ file: tagDbApi.js ~ line 19 ~ tags \n", tags);
-
-    // tags = tagsConst;
     tags = prepareTags(tags);
     await tagsAddToDB(tags);
-    // findAllTags().then((tags) => {
-        // tagDBToConsole(tags);
-        // sizeModelPrintToConsole();
-    // });
+    await findAllTags();
 }
+
+
 const findAllTags = async () => {
     const tags = await Tag.findAll()
     return tags;
 }
 
-// const tagDBToConsole = (tags) => {
-//     tags.forEach(item => {
-//         if (!item.dataValues.value.indexOf("авто")) {
-//             console.log("🚀 27 ~ tags id >> ", item.dataValues.id, " ");
-//             console.log("🚀 28 ~ tags value >>", item.dataValues.value, " ");
-//             console.log("🚀 29 ~ tags count >>", item.dataValues.count, " ");
-//             console.log("🚀 30 ~ end >>>>>> \n");
-//         }
-//     })
-// }
-
-
 const tagsAddToDB = async (tags) => {
-    let i = 0
+    let i = 0;
     while (i < tags.length) {
          ((await tagAddToDB(tags[i])) && (i++));
     }
 }
-
 
 const tagAddToDB = async (tag) => {
     let itemDB = await findOrCreateTag(tag);
@@ -107,4 +81,5 @@ const removeEmptyTags = (tags) => {
 
 module.exports = {
     tagsToTable,
+    findAllTags
 }

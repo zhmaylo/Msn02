@@ -9,7 +9,6 @@ import { TagsCmp } from './TagsCmp';
 
 
 export const TaskCardCmp = ({ taskOfUser }) => {
-    console.log("🚀 ~ file: TaskCardCmp.js ~ line 12 ~ taskOfUser", taskOfUser);
     return (
         <Card>
             <Card.Header>

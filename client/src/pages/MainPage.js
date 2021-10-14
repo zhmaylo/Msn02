@@ -16,7 +16,6 @@ export const MainPage = () => {
     useEffect(() => {
         getTasksAndOrder('createdAt').then((task) => {
             setTaskOrdered(task);
-            console.log("🚀 ~ file: MainPage.js ~ line 12 ~ useEffect ~ task", task);
             setIsLoading(true)
         })
     }, [getTasksAndOrder])

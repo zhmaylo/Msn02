@@ -1,5 +1,6 @@
 
 const express = require('express');
+const { findAllTags } = require('../api/tagDbApi');
 const { findAllAndSort } = require('../api/taskDbApi');
 
 const router = express.Router();
@@ -8,6 +9,16 @@ router.get('/sortby', async (req, res) => {
     try {
         const tasks = await findAllAndSort(req.query.field, req.query.sortby);
         res.json(tasks);
+    }
+    catch (e) {
+        res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
+    }
+})
+
+router.get('/cloudtags', async (req, res) => {
+    try {
+        const cloudtags = await findAllTags();
+        res.json(cloudtags);
     }
     catch (e) {
         res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
