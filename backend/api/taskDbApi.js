@@ -2,15 +2,15 @@ const Task = require('../models/Task');
 const { tagsToTable } = require('./tagDbApi');
 
 const createTask = async (user, task) => {
-    tagsToTable(task.tags);
-    // await user.createTask({
-    //     name: task.name,
-    //     condition: task.condition,
-    //     answer: task.answer,
-    //     rating: task.rating,
-    //     tags: task.tags,
-    // }).catch(err => console.err("🚀 createTask() ~ err  ", err));
-    console.log("🚀 createTask - Ok  розкоментируй createTask  ");
+    await tagsToTable(task.tags);
+    await user.createTask({
+        name: task.name,
+        condition: task.condition,
+        answer: task.answer,
+        rating: task.rating,
+        tags: task.tags,
+    }).catch(err => console.err("🚀 createTask() ~ err  ", err));
+    console.log("🚀 createTask - Ok  ");
 }
 
 const findAllAndSort = async (field, sortby) => {

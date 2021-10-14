@@ -4,16 +4,10 @@ const { createTask } = require('../api/taskDbApi');
 const { getuser } = require('../api/userDbApi');
 
 
-const addTaskToUser = async (userUID, task) => {
-    const user = await getuser(userUID);
-    const istask = await isTask(task);
-    if (istask) return;
-    await createTask(user, task);
-}
 
 const isTask = async (task) => {
     const instance = await Task.findOne({ where: { name: task.name } })
-        .catch(err => console.err("🚀 ~ isTask() ~ line 22 ~ err", err));
+    .catch(err => console.err("🚀 ~ isTask() ~ line 22 ~ err", err));
     if (instance === null) return false;
     return true;
 }
@@ -23,6 +17,13 @@ const taskdataToTask = async () => {
     for (i = 0; i < 10; i++) {
         await addTaskToUser(uid[i], taskdata[i]);
     }
+}
+
+const addTaskToUser = async (userUID, task) => {
+    const user = await getuser(userUID);
+    const istask = await isTask(task);
+    if (istask) return;
+    await createTask(user, task);
 }
 
 module.exports = {
