@@ -22,7 +22,9 @@ export const CloudTagsCmp = () => {
             maxSize={35}
             tags={tags}
             disableRandomColor={true}
-            onClick={tag => alert(`'${tag.value}' was selected!`)}
+            onClick={tag => {
+                console.log("🚀 ~ file: CloudTagsCmp.js ~ line 26 ~ tag", tag);
+                alert(`'${tag.value}' was selected!`)}}
             style={{ textAlign: 'center' }}
             className="simple-cloud"
         />

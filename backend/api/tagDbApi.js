@@ -16,6 +16,14 @@ const findMostPopularTag = async (amountTags = 7) => {
     return tags;
 }
 
+
+const findAllTags = async () => {
+    const tags = await Tag.findAll()
+    return tags;
+}
+
+
+
 const tagsAddToDB = async (tags) => {
     let i = 0;
     while (i < tags.length) {
@@ -86,4 +94,5 @@ const removeEmptyTags = (tags) => {
 module.exports = {
     tagsToTable,
     findMostPopularTag,
+    findAllTags,
 }

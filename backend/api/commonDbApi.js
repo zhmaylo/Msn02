@@ -15,7 +15,7 @@ const getSizeModel = async (model) => {
 const clearModel = async (model) => {
 
     await model.drop()
-    await model.sync()
+    await model.sync({force: true})
         .catch(err => console.error("🚀 clearMosel() ~ line 18 ~ err  ", err));
 }
 

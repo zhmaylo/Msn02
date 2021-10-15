@@ -18,13 +18,35 @@ const findAllAndSort = async (field, sortby) => {
         order: [
             [field, sortby],
         ],
-    }).catch(err => console.error("🚀 findAllAndSort()) ~ err  ", err));;
+    }).catch(err => console.error("🚀 findAllAndSort()) ~ err  ", err));
     return tasks;
 }
 
 
+const { Op } = require("sequelize");
+const findTagsInTask = async (tag) => {
+    tag1 = 'стакан%'
+    tag2 = '%стакан'
+    tag3 = '[.;,\s]стакан[.;,\s]'
+    const task = await Task.findAll(
+        {
+            where: {
+                tags: {
+                    [Op.or]: [
+                        { [Op.like]: tag1 },
+                        { [Op.like]: tag2 },
+                        { [Op.regexp]: tag3 }
+                    ]
+                }
+            }
+        }
+    ).catch(err => console.error("🚀 findTagsInTask()) ~ err  ", err));
+    return task;
+}
+
 module.exports = {
     createTask,
     findAllAndSort,
+    findTagsInTask,
 }
 
