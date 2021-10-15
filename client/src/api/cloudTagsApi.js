@@ -10,5 +10,5 @@ export const useGetTagsRequest = () => {
 }
 
 const getQueryString = () => {
-    return ('/mainpage/cloudtags')
+    return ('/mainpage/cloudtags/20')
 }

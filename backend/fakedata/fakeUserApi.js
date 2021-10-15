@@ -1,7 +1,7 @@
 const { createUser } = require('../api/userDbApi');
 const userdata = require('./user.db');
 
-const userdateToUser = async () => {
+const userdataToUser = async () => {
     userdata.forEach(async (item) => {
         await createUser(item);
     })
@@ -10,6 +10,6 @@ const userdateToUser = async () => {
 
 
 module.exports = {
-    userdateToUser
+    userdataToUser
 }
 

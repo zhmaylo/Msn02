@@ -8,7 +8,7 @@ const createUser = async (item) => {
             uid: item.uid,
             name: item.name,
         }
-    }).catch(err => console.err("🚀 createTask() ~ line 11 ~ err  ", err));
+    }).catch(err => console.error("🚀 createTask() ~ line 11 ~ err  ", err));
     if (iscreate[1]) {
         console.log("🚀 createUser - Ok  ")
     };
@@ -16,7 +16,7 @@ const createUser = async (item) => {
 
 const getuser = async (userUID) => {
     const user = await User.findOne({ where: { uid: userUID } })
-        .catch(err => console.err("🚀 ~ getuser() ~ err", err));
+        .catch(err => console.error("🚀 ~ getuser() ~ err", err));
     return user;
 }
 

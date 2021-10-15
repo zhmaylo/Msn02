@@ -6,16 +6,20 @@ const tagsToTable = async (tags) => {
     await findAllTags();
 }
 
-
-const findAllTags = async () => {
-    const tags = await Tag.findAll()
+const findMostPopularTag = async (amountTags = 7) => {
+    const tags = await Tag.findAll({
+        limit: amountTags,
+        order: [
+            ['count', 'DESC'],
+        ],
+    }).catch(err => console.error("🚀 findAllAndSort()) ~ err  ", err));;
     return tags;
 }
 
 const tagsAddToDB = async (tags) => {
     let i = 0;
     while (i < tags.length) {
-         ((await tagAddToDB(tags[i])) && (i++));
+        ((await tagAddToDB(tags[i])) && (i++));
     }
 }
 
@@ -45,7 +49,7 @@ const findOrCreateTag = async (value) => {
             value: value,
             count: 0,
         }
-    }).catch(err => console.err("🚀 findOrCreate() ~  err  ", err));
+    }).catch(err => console.error("🚀 findOrCreate() ~  err  ", err));
     if (itemDB[1]) {
         console.log("🚀 createTag - Ok  ")
     };
@@ -81,5 +85,5 @@ const removeEmptyTags = (tags) => {
 
 module.exports = {
     tagsToTable,
-    findAllTags
+    findMostPopularTag,
 }

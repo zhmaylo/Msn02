@@ -5,7 +5,7 @@ import { TaskCardListCmp } from './../components/TaskCard/TaskCardListCmp';
 import { Loading } from './../components/Loading/LoadingCmp';
 import { SortBarCmp } from './../components/MainPage/SortBarCmp';
 import { TASK_CARD_STYLE } from './../const/style';
-import { CloudTagsCmp } from './../components/CloudTags/CloudTagsCmp';
+import { CloudTagsCmp } from "../components/MainPage/CloudTagsCmp";
 
 
 export const MainPage = () => {

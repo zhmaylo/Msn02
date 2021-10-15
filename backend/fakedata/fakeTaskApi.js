@@ -14,7 +14,7 @@ const isTask = async (task) => {
 
 const taskdataToTask = async () => {
     const uid = ['01', '01', '01', '03','03','04', '109751285978140171006', '109751285978140171006', '109751285978140171006', '109751285978140171006'];
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < taskdata.length ; i++) {
         await addTaskToUser(uid[i], taskdata[i]);
     }
 }

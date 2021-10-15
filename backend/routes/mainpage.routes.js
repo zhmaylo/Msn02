@@ -1,6 +1,6 @@
 
 const express = require('express');
-const { findAllTags } = require('../api/tagDbApi');
+const { findMostPopularTag } = require('../api/tagDbApi');
 const { findAllAndSort } = require('../api/taskDbApi');
 
 const router = express.Router();
@@ -15,9 +15,10 @@ router.get('/sortby', async (req, res) => {
     }
 })
 
-router.get('/cloudtags', async (req, res) => {
+router.get('/cloudtags/:amountags', async (req, res) => {
     try {
-        const cloudtags = await findAllTags();
+        req.params.amountags
+        const cloudtags = await findMostPopularTag(req.params.amountags);
         res.json(cloudtags);
     }
     catch (e) {

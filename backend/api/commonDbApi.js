@@ -1,7 +1,7 @@
 const Tag = require("../models/Tag");
 const Task = require("../models/Task");
 const User = require("../models/User");
-const {sequelize} = require("./sequelize.db");
+const { sequelize } = require("./sequelize.db");
 
 
 const getSizeModel = async (model) => {
@@ -13,7 +13,10 @@ const getSizeModel = async (model) => {
 }
 
 const clearModel = async (model) => {
-    await model.sync({ force: true })
+
+    await model.drop()
+    await model.sync()
+        .catch(err => console.error("🚀 clearMosel() ~ line 18 ~ err  ", err));
 }
 
 const sizeModelPrintToConsole = async () => {
