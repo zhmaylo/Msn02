@@ -1,13 +1,15 @@
 
 const express = require('express');
 const { selectTasks } = require('../api/fts');
-const { createUser } = require('../api/userDbApi');
+const { err } = require('./err');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-       const tasks = await selectTasks( req.query.search);
-        console.log("🚀 ~ file: search.routes.js ~ line 12 ~ json(tasks)", tasks);
-        res.json(tasks)
+        try {
+                const tasks = await selectTasks(req.query.search);
+                res.json(tasks)
+        }
+        catch (e) { err(); }
 })
 
 router.post('/', (req, res) => {

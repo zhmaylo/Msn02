@@ -6,32 +6,38 @@ import { Loading } from './../components/Loading/LoadingCmp';
 import { SortBarCmp } from './../components/MainPage/SortBarCmp';
 import { TASK_CARD_STYLE } from './../const/style';
 import { CloudTagsCmp } from "../components/MainPage/CloudTagsCmp";
+import { createAt } from './../const/mainConst';
 
 
 export const MainPage = () => {
     const [tasksOrdered, setTaskOrdered] = useState();
     const [isLoading, setIsLoading] = useState(false);
-    const { getTasksAndOrder } = useGetTasksAndOrder()
+    const [fieldState, setField] = useState(createAt);
+    const [tagState, setTag] = useState("");
+    const { getTasksAndOrder } = useGetTasksAndOrder();
+
 
     useEffect(() => {
-        getTasksAndOrder('createdAt').then((task) => {
+        getTasksAndOrder(createAt, '').then((task) => {
             setTaskOrdered(task);
             setIsLoading(true)
         })
     }, [getTasksAndOrder])
 
-    const getTasksList = (field) => {
-        getTasksAndOrder(field).then((task) => { setTaskOrdered(task) })
-    }
-
+    useEffect(() => {
+        getTasksAndOrder(fieldState, tagState).then((task) => {
+            setTaskOrdered(task)
+        })
+    },[fieldState, tagState])
+    
     if (!isLoading) {
         return (<Loading />)
     }
     return (
         <>
             <div className={TASK_CARD_STYLE}>
-                <SortBarCmp getTasksList={getTasksList} />
-                <CloudTagsCmp />
+                <SortBarCmp setField={setField} />
+                <CloudTagsCmp setTag={setTag} /> 
                 <TaskCardListCmp tasksOfUser={tasksOrdered} />
             </div>
         </>

@@ -19,6 +19,7 @@ app.use('/mainpage', require('./backend/routes/mainpage.routes'))
 app.use('/search', require('./backend/routes/search.routes'))
 
 
+
 if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(path.join(__dirname, 'client', 'build')))
   app.get('*', (req, res) => {
@@ -31,4 +32,3 @@ app.listen(port, () => console.log(`Server has been started ${port}...`))
 //////////////////////////////////////
 initDB();
 
-sizeModelPrintToConsole();

@@ -3,12 +3,12 @@ import { request } from './requestApi';
 
 
 export const useGetTagsRequest = () => {
-    const getTagsRequest = useCallback(async (field) => {
-        return await request(getQueryString(), 'GET', null, {});
+    const getTagsRequest = useCallback(async (amount) => {
+        return await request(getQueryString(amount), 'GET', null, {});
     }, [])
     return { getTagsRequest };
 }
 
-const getQueryString = () => {
-    return ('/mainpage/cloudtags/20')
+const getQueryString = (amount) => {
+    return (`/mainpage/cloudtags/${amount}`)
 }

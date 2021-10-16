@@ -7,8 +7,6 @@ const Tag = require('../models/Tag');
 
 const { clearModel, sizeModelPrintToConsole } = require('../api/commonDbApi');
 const { addFTSToTask } = require('../api/fts');
-const { findTagsInTask } = require('./taskDbApi');
-
 
 
 const initDB = async () => {
@@ -20,11 +18,7 @@ const initDB = async () => {
     // await taskdataToTask();
 
     // await addFTSToTask();
-    const tags = await findTagsInTask()
-    tags.forEach(item => {
-        
-        console.log("🚀 ~ initDB.js ~ ", item.tags, "  ");
-    })
+
     await sizeModelPrintToConsole();
 }
 

@@ -1,30 +1,28 @@
 
 const express = require('express');
 const { findMostPopularTag } = require('../api/tagDbApi');
-const { findAllAndSort } = require('../api/taskDbApi');
+const { findAllTaskAndSort } = require('../api/taskDbApi');
+const { err } = require('./err');
 
 const router = express.Router();
 
 router.get('/sortby', async (req, res) => {
     try {
-        const tasks = await findAllAndSort(req.query.field, req.query.sortby);
+        console.log("🚀 ~ file: mainpage.routes.js ~ line 12 ~ req.query", req.query);
+        const tasks = await findAllTaskAndSort(req.query.field, req.query.sortby, req.query.tag);
         res.json(tasks);
     }
-    catch (e) {
-        res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
-    }
+    catch (e) { err(); }
 })
 
 router.get('/cloudtags/:amountags', async (req, res) => {
     try {
-        req.params.amountags
         const cloudtags = await findMostPopularTag(req.params.amountags);
         res.json(cloudtags);
     }
-    catch (e) {
-        res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
-    }
+    catch (e) { err(); }
 })
+
 
 router.post('/', (req, res) => {
 

@@ -1,5 +1,6 @@
 const Task = require('../models/Task');
 const { tagsToTable } = require('./tagDbApi');
+const { Op } = require("sequelize");
 
 const createTask = async (user, task) => {
     await tagsToTable(task.tags);
@@ -13,40 +14,31 @@ const createTask = async (user, task) => {
     console.log("🚀 createTask - Ok  ");
 }
 
-const findAllAndSort = async (field, sortby) => {
-    const tasks = await Task.findAll({
-        order: [
-            [field, sortby],
-        ],
-    }).catch(err => console.error("🚀 findAllAndSort()) ~ err  ", err));
-    return tasks;
-}
 
-
-const { Op } = require("sequelize");
-const findTagsInTask = async (tag) => {
-    tag1 = 'стакан%'
-    tag2 = '%стакан'
-    tag3 = '[.;,\s]стакан[.;,\s]'
-    const task = await Task.findAll(
+const findAllTaskAndSort = async (field, sortby, tag) => {
+    const tasks = await Task.findAll(
         {
             where: {
                 tags: {
                     [Op.or]: [
-                        { [Op.like]: tag1 },
-                        { [Op.like]: tag2 },
-                        { [Op.regexp]: tag3 }
+                        { [Op.like]: tag + '%' },
+                        { [Op.like]: '%' + tag },
+                        { [Op.regexp]: '[.;,\s]' + tag + '[.;,\s]' }
                     ]
                 }
-            }
+            },
+            order: [
+                [field, sortby],
+            ],
         }
-    ).catch(err => console.error("🚀 findTagsInTask()) ~ err  ", err));
-    return task;
+    ).catch(err => console.error("🚀 findAllTaskAndSort()) ~ err  ", err));
+    return tasks;
 }
+
 
 module.exports = {
     createTask,
-    findAllAndSort,
-    findTagsInTask,
+    findAllTaskAndSort,
 }
+
 

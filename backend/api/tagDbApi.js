@@ -12,7 +12,7 @@ const findMostPopularTag = async (amountTags = 7) => {
         order: [
             ['count', 'DESC'],
         ],
-    }).catch(err => console.error("🚀 findAllAndSort()) ~ err  ", err));;
+    }).catch(err => console.error("🚀 findAllTaskAndSort()) ~ err  ", err));;
     return tags;
 }
 
@@ -21,8 +21,6 @@ const findAllTags = async () => {
     const tags = await Tag.findAll()
     return tags;
 }
-
-
 
 const tagsAddToDB = async (tags) => {
     let i = 0;
