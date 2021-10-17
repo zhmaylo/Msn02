@@ -6,6 +6,7 @@ import { MyPage } from "./pages/MyPage"
 import { UserPage } from "./pages/UserPage"
 import { Context } from './context/Context';
 import { SearchPage } from './pages/SearchPage';
+import { AddTaskPage } from './pages/AddTaskPage';
 
 
 export const Routes = () => {
@@ -18,7 +19,7 @@ export const Routes = () => {
                     <Route path="/admin" exact> <AdminPage /> </Route>
                     <Route path="/mypage" exact> <MyPage /> </Route>
                     <Route path="/userpage/:id/:name/:mypage?"> <UserPage /> </Route>
-                    <Route path="/searchpage"> <SearchPage /> </Route>
+                    <Route path="/addtaskpage"> <AddTaskPage /> </Route>
                 </>
             )
         return (<Redirect to="/main" />)
@@ -26,9 +27,8 @@ export const Routes = () => {
 
     return (
         <Switch>
-            <Route path="/main" exact>
-                <MainPage />
-            </Route>
+            <Route path="/main" exact> <MainPage /> </Route>
+            <Route path="/searchpage"> <SearchPage /> </Route>
             <AuthPage />
         </Switch>
     )

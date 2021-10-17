@@ -8,6 +8,7 @@ import { TaskCardCmp } from './../components/TaskCard/TaskCardCmp';
 import { NoTaskCmp } from "../components/TaskCard/NoTaskCmp";
 import { BackButtonCmp } from "../components/MyPage/BackButtonCmp";
 import { TASK_CARD_STYLE } from './../const/style';
+import { MyPageHeaderCmp } from './../components/MyPage/MyPageHeaderCmp';
 
 
 export const MyPage = () => {
@@ -24,12 +25,20 @@ export const MyPage = () => {
         })
     }, [getTasksOfUser, cont.userData.id])
 
-  
+    const TaskTable = () => {
+        return (
+            <>
+                <MyPageHeaderCmp tasksOfUser={tasksOfUser} />
+                <TaskTableCmp tasksOfUser={tasksOfUser} setSelectedTask={setSelectedTask} />
+            </>
+        )
+    }
+
     const ShowTaskCard = () => {
         return (
             <>
                 <div className={TASK_CARD_STYLE}>
-                    <BackButtonCmp link={'/mypage'}/>
+                    <BackButtonCmp link={'/mypage'} />
                     <TaskCardCmp taskOfUser={selectedTask} />
                 </div>
             </>
@@ -41,7 +50,7 @@ export const MyPage = () => {
             <Container className={TASK_CARD_STYLE}>
                 {(tasksOfUser.length === 0)
                     ? (<NoTaskCmp />)
-                    : (<TaskTableCmp tasksOfUser={tasksOfUser} setSelectedTask={setSelectedTask} />)
+                    : (<TaskTable />)
                 }
             </Container>
         )

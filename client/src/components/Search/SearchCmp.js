@@ -20,7 +20,8 @@ export const Search = () => {
 
     const searchResultHandler = (tasks) => {
         setIsLoad(false);
-        cont.searchResult = tasks;
+        cont.setSearchResult(tasks);
+        setFormData(cont.inputFormData)
         setIsRedirect(true)
     }
 

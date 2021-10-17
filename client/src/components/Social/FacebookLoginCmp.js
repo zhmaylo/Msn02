@@ -19,7 +19,7 @@ const FacebookButton = ({ onClick }) => {
 
 
 
-export const Fa1cebookLoginCmp = () => {
+export const FacebookLoginCmp = () => {
     const cont = useContext(Context)
 
     const facebookOk = (data) => {

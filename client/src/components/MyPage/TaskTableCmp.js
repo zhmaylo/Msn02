@@ -5,17 +5,13 @@ import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import { getDateFromSequelizeFormat, getTimeFromSequelizeFormat } from '../../api/datetimeApi';
 
-
 const loc = require("../../const/locale.json");
 
-
 export const TaskTableCmp = ({ tasksOfUser, setSelectedTask }) => {
-    console.log("🚀 ~ file: TaskTableCmp.js ~ line 11 ~ tasksOfUser", tasksOfUser);
     const cont = useContext(Context);
-     
+
     return (
         <div>
-            <p>{loc.TotalTasks[cont.lang]} - {tasksOfUser.length} </p>
             <Table>
                 <thead>
                     <tr>
@@ -32,7 +28,6 @@ export const TaskTableCmp = ({ tasksOfUser, setSelectedTask }) => {
                                 <td>
                                     <Button variant="link"
                                         onClick={() => {
-                                            console.log("🚀 ~ file: TaskTableCmp.js ~ line 34 ~ tasksOfUser");
                                             setSelectedTask(item);
                                         }}
                                     >

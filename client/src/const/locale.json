@@ -1,5 +1,4 @@
 {
-   
     "AdminPanel": {
         "ru-RU": "Админ панель",
         "en-EN": "Admin panel"
@@ -79,6 +78,33 @@
     "NothingFound": {
         "ru-RU": "Ничего не найдено",
         "en-EN": "Nothing found"
+    },
+    "AddTask": {
+        "ru-RU": "Добавить задачу",
+        "en-EN": "Add task"
+    },
+    "CreateTask": {
+        "ru-RU": "Создание задачи",
+        "en-EN": "Create task"
+    },
+    "LogInForExtendedAccessToTheSite": {
+        "ru-RU": "Авторизируйтесь для расширенного доступа к сайту",
+        "en-EN": "Log in for extended access to the site"
+    },
+    "Exit": {
+        "ru-RU": "Выход",
+        "en-EN": "Exit"
+    },
+    "SearchBut": {
+        "ru-RU": "Поиск",
+        "en-EN": "Search"
+    },
+    "ChangeTheme": {
+        "ru-RU": "Сменить тему",
+        "en-EN": "Change theme"
+    },
+    "ChangeLanguage": {
+        "en-EN": "Сменить язык",
+        "ru-RU": "Change language"
     }
 }
-

@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { BrowserRouter as Route } from "react-router-dom"
 
 import { Navibar } from './components/Navibar/NavibarCmp'
@@ -13,9 +13,13 @@ function App() {
   const { themeRef, setThemeState } = useTheme();
   const { lang, setLocaleState } = useLocale();
   const { userData, sendUserDataToState } = useUserState();
-  
+  const [searchResult, setSearchResult] = useState();
+
+
   return (
-    <Context.Provider value={{ setThemeState, setLocaleState, lang, userData, sendUserDataToState }} >
+    <Context.Provider value={{ setThemeState, 
+    setLocaleState, lang, userData, sendUserDataToState, 
+    searchResult, setSearchResult }} >
 
       <Route>
         <div className="App" >
