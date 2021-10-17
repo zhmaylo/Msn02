@@ -56,6 +56,18 @@
         "ru-RU": "Мои задачи",
         "en-EN": "My tasks"
     },
+    "Rating": {
+        "ru-RU": "Рейтинг",
+        "en-EN": "Rating"
+    },
+    "CreateDate": {
+        "ru-RU": "Дата создания",
+        "en-EN": "Create date"
+    },
+    "TotalTasks": {
+        "ru-RU": "Всего задач",
+        "en-EN": "Total tasks"
+    },
     "Back": {
         "ru-RU": "Назад",
         "en-EN": "Back"

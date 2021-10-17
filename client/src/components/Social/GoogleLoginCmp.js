@@ -20,11 +20,9 @@ export const GoogleLoginCmp = () => {
     const cont = useContext(Context)
 
     const googleOk = (data) => {
-        console.log("🚀 ~ file: GoogleLoginCmp.js ~ line 23 ~ GoogleLoginCmp ~ data", data)
         sendUserDataToStorage(data);
         sendUserDataToServer(data);
         cont.sendUserDataToState(data);
-        console.log('🚀 ~ file: GoogleLoginCmp.js ~ line 28 ~ googleOk ~ cont.userData', cont.userData);
     }
     return (
         <GoogleLogin

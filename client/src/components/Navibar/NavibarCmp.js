@@ -13,9 +13,14 @@ import { LoginCmp } from '../Login/LoginCmp';
 import { LogoutCmp } from '../Login/LogoutCmp';
 
 const loc = require("../../const/locale.json");
+const permissions = require("../../const/permissions.json");
 
 export const Navibar = () => {
     const cont = useContext(Context)
+
+    const isAdmin = () => {
+        return permissions.admin.id.includes(cont.userData.id);
+    }
 
     const LogOutIn = () => {
         if (cont.userData.isAuth) {
@@ -27,8 +32,7 @@ export const Navibar = () => {
         return (
             <>
                 <Nav.Link href={`/mypage`}> {loc.MyPage[cont.lang]} </Nav.Link>
-                { (cont.userData.id === "109751285978140171006") && (
-                <Nav.Link href="/admin"> {loc.AdminPanel[cont.lang]}</Nav.Link> )}
+                {(isAdmin()) && (<Nav.Link href="/admin"> {loc.AdminPanel[cont.lang]}</Nav.Link>)}
             </>
         )
     }
@@ -40,7 +44,7 @@ export const Navibar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                                        {(cont.userData.isAuth) && (<AdminPanel />)}
+                        {(cont.userData.isAuth) && (<AdminPanel />)}
                     </Nav>
                     <div className="search col-lg-4 col-xl-5 col-xxl-6" >
                         <Search />

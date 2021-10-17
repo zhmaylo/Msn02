@@ -1,6 +1,4 @@
 
-const message = require('../const/message.json')
-
 export const request = (async (url, method = 'GET', body = null, headers = {}) => {
     try {
         const response = await getRequest(url, method, body, headers);
@@ -15,7 +13,7 @@ export const request = (async (url, method = 'GET', body = null, headers = {}) =
 
 const isResponseFail = (res, data) => {
     if (!res) {
-        throw new Error(data.message || message.somethingWentWrong)
+        throw new Error((data.message) || ('Что-то пошло не так, попробуйте снова'))
     }
 }
 

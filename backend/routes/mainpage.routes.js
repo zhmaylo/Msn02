@@ -8,7 +8,6 @@ const router = express.Router();
 
 router.get('/sortby', async (req, res) => {
     try {
-        console.log("🚀 ~ file: mainpage.routes.js ~ line 12 ~ req.query", req.query);
         const tasks = await findAllTaskAndSort(req.query.field, req.query.sortby, req.query.tag);
         res.json(tasks);
     }

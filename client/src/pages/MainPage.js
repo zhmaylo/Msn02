@@ -28,7 +28,7 @@ export const MainPage = () => {
         getTasksAndOrder(fieldState, tagState).then((task) => {
             setTaskOrdered(task)
         })
-    },[fieldState, tagState])
+    },[fieldState, tagState,getTasksAndOrder])
     
     if (!isLoading) {
         return (<Loading />)

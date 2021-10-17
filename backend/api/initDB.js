@@ -10,14 +10,14 @@ const { addFTSToTask } = require('../api/fts');
 
 
 const initDB = async () => {
-    // await clearModel(User);
-    // await clearModel(Task);
-    // await clearModel(Tag);
+    await clearModel(User);
+    await clearModel(Task);
+    await clearModel(Tag);
 
-    // await userdataToUser();
-    // await taskdataToTask();
+    await userdataToUser();
+    await taskdataToTask();
 
-    // await addFTSToTask();
+    await addFTSToTask();
 
     await sizeModelPrintToConsole();
 }
