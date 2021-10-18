@@ -106,5 +106,38 @@
     "ChangeLanguage": {
         "en-EN": "Сменить язык",
         "ru-RU": "Change language"
+    },
+    "___AddTaskBlock_Start": {
+        "ru-RU": "",
+        "en-EN": ""
+    },
+    "TaskName": {
+        "ru-RU": "Название задачи",
+        "en-EN": "Task name"
+    },
+    "EnterTaskName": {
+        "ru-RU": "Введите название задачи",
+        "en-EN": "Enter task name"
+    },
+    "ConditionTask": {
+        "ru-RU": "Условие задачи",
+        "en-EN": "Condition task"
+    },
+    "EnterTaskCondition": {
+        "ru-RU": "Введите условие задачи",
+        "en-EN": "Enter task Condition"
+    },
+    "PreviewTask": {
+        "ru-RU": "Предварительный просмотр",
+        "en-EN": "Preview task"
+    },
+    "SaveTask": {
+        "ru-RU": "Сохранить задачу",
+        "en-EN": "Save task"
+    },
+    "___AddTaskBlock_End": {
+        "ru-RU": "",
+        "en-EN": ""
     }
+
 }

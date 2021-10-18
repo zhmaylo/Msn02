@@ -23,8 +23,7 @@ export const FloatButton = ({ setShowAddTask }) => {
                 delay={{ show: 250, hide: 400 }}
                 overlay={renderTooltip}
             >
-                {/* <Link to="/addtaskpage" > */}
-                <Link to="mypage" >
+                <Link to="/addtaskpage" >
                     <i className="bi bi-plus-square" style={{ fontSize: 36 }} />
                 </Link>
             </OverlayTrigger>
